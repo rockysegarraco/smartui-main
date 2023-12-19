@@ -1,4 +1,8 @@
-const tabs = [{ name: "Delivery" }, { name: "Pickup" }, { name: "Shipping" }];
+const tabs = [
+  { name: "Delive It" },
+  { name: "Pick It Up" },
+  { name: "Ship It" },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
