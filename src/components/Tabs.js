@@ -1,5 +1,5 @@
 const tabs = [
-  { name: "Delive It" },
+  { name: "Deliver It" },
   { name: "Pick It Up" },
   { name: "Ship It" },
 ];

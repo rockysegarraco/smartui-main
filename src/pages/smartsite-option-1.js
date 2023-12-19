@@ -11,7 +11,7 @@ import NavSmartSite from "@/components/NavSmartSite";
 import Select from "@/components/Select";
 
 export default function Page() {
-  const [tab, setTab] = useState("Delivery");
+  const [tab, setTab] = useState("Deliver It");
   return (
     <>
       <NavSmartSite />
@@ -30,13 +30,13 @@ export default function Page() {
             <Tabs tabname={tab} setTab={(name) => setTab(name)} />
           </div>
           {/* Delivery Tab */}
-          {tab === "Delivery" && <SmartSiteTabScrollDelivery />}
+          {tab === "Deliver It" && <SmartSiteTabScrollDelivery />}
 
           {/* Pickup Tab */}
-          {tab === "Pickup" && <SmartSiteTabScrollPickup />}
+          {tab === "Pick It Up" && <SmartSiteTabScrollPickup />}
 
           {/* Shipping Tab */}
-          {tab === "Shipping" && <SmartSiteTabScrollShipping />}
+          {tab === "Ship It" && <SmartSiteTabScrollShipping />}
 
           {/* SHARE BTN */}
           <div className="flex items-center border-t">
