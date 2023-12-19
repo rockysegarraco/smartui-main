@@ -1,7 +1,7 @@
 const tabs = [
-  { name: "Deliver It" },
-  { name: "Pick It Up" },
-  { name: "Ship It" },
+  { name: "Deliver it" },
+  { name: "In Store" },
+  { name: "Ship it" },
 ];
 
 function classNames(...classes) {
