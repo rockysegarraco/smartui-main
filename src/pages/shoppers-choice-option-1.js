@@ -8,7 +8,7 @@ import ShippingTab from "@/components/ShippingTab";
 import NavSmartSite from "@/components/NavSmartSite";
 
 export default function Page() {
-  const [tab, setTab] = useState("Delivery");
+  const [tab, setTab] = useState("Deliver it");
   return (
     <>
       <div>
@@ -37,13 +37,13 @@ export default function Page() {
               <Tabs tabname={tab} setTab={(name) => setTab(name)} />
             </div>
             {/* Delivery Tab */}
-            {tab === "Delivery" && <DeliveryTab />}
+            {tab === "Deliver it" && <DeliveryTab />}
 
             {/* Pickup Tab */}
-            {tab === "Pickup" && <PickupTab />}
+            {tab === "In Store" && <PickupTab />}
 
             {/* Shipping Tab */}
-            {tab === "Shipping" && <ShippingTab />}
+            {tab === "Ship it" && <ShippingTab />}
 
             {/* SHARE BTN */}
             <div className="flex items-center border-t">
