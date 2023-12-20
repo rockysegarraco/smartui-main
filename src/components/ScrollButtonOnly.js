@@ -39,7 +39,7 @@ export default function ScrollButtonOnly(props) {
                 key={i}
                 className="border rounded-md p-2 cursor-pointer hover:bg-blue-50 ease-in-out duration-300"
               >
-                <div className="flex flex-col w-full text-center w-[73px]">
+                <div className="flex flex-col text-center w-[73px]">
                   <div className="mx-auto">
                     <img className="h-12" src={i} alt="" />
                   </div>
