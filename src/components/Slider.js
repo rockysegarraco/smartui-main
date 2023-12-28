@@ -6,13 +6,13 @@ export default function Slider() {
   return (
     <>
       {/* FLEX WRAP */}
-      <div class="flex items-center">
-        <div class="shrink-0 px-2">
+      <div className="flex items-center">
+        <div className="shrink-0 px-2">
           <ChevronLeftIcon className="h-8" />
         </div>
-        <div class="group flex-auto text-center cursor-pointer">
-          <div class="flex items-center w-full gap-x-2">
-            <div class="grow bg-slate-50 p-2 rounded-md">
+        <div className="group flex-auto text-center cursor-pointer">
+          <div className="flex items-center w-full gap-x-2">
+            <div className="grow bg-slate-50 p-2 rounded-md">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -25,7 +25,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div class="grow bg-slate-50 p-2 rounded-md">
+            <div className="grow bg-slate-50 p-2 rounded-md">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -38,7 +38,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div class="grow bg-slate-50 p-2 rounded-md">
+            <div className="grow bg-slate-50 p-2 rounded-md">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -51,7 +51,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div class="grow bg-slate-50 p-2 rounded-md lg:block hidden">
+            <div className="grow bg-slate-50 p-2 rounded-md lg:block hidden">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -66,7 +66,7 @@ export default function Slider() {
             </div>
           </div>
         </div>
-        <div class="shrink-0 px-2">
+        <div className="shrink-0 px-2">
           <ChevronRightIcon className="h-8" />
         </div>
       </div>
