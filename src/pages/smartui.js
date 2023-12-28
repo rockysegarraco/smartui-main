@@ -1,9 +1,13 @@
 import Select from "@/components/Select";
 import Slider from "@/components/Slider";
-import Map from "@/components/Map";
-import Share from "@/components/Share";
+import GoogleMapReact from "google-map-react";
 
 export default function Page() {
+  const location = {
+    lat: 26.1188486,
+    lng: -80.13108199999999,
+  };
+
   return (
     <>
       {/* WRAP */}
@@ -14,7 +18,17 @@ export default function Page() {
             <Slider />
             <Share />
           </div>
-          <div className="col-span-1">MAP HERE</div>
+          <div className="col-span-1">
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY,
+                libraries: ["places"],
+              }}
+              defaultCenter={location}
+              defaultZoom={15}
+              yesIWantToUseGoogleMapApiInternals
+            ></GoogleMapReact>
+          </div>
         </div>
       </div>
     </>
