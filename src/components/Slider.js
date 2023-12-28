@@ -51,7 +51,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div class="grow bg-slate-50 p-2 rounded-md lg:block hidden">
+            <div class="grow bg-slate-50 p-2 rounded-md md:block lg:block hidden">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
