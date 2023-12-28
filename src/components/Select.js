@@ -11,6 +11,7 @@ export default function SelectSmall() {
       <FormControl fullWidth size="small">
         <InputLabel id="demo-select-small-label">Choose</InputLabel>
         <Select
+          className="bg-white"
           labelId="demo-select-small-label"
           id="demo-select-small"
           value="1"
