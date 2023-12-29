@@ -11,21 +11,17 @@ export default function Page() {
 
   return (
     <>
-      {/* WRAP */}
-      <div className="bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="bg-white lg:bg-transparent p-2">
+        <div className="grid grid-cols-1">
           <div className="col-span-1">
-            <div className="p-4">
+            <div className="lg:p-0 p-4 p-0">
               <Select />
             </div>
-            <div className="pt-2 pb-4 px-4">
+            <div className="py-4 px-0 lg:px-4">
               <Slider />
             </div>
-            <div className="lg:block hidden">
-              <Share />
-            </div>
           </div>
-          <div className="col-span-1 lg:h-auto h-24">
+          {/*           <div className="col-span-1 h-24">
             <GoogleMapReact
               bootstrapURLKeys={{
                 key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY,
@@ -35,10 +31,10 @@ export default function Page() {
               defaultZoom={15}
               yesIWantToUseGoogleMapApiInternals
             ></GoogleMapReact>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="lg:hidden block">
+      <div>
         <Share />
       </div>
     </>
