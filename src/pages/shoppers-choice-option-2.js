@@ -22,16 +22,16 @@ export default function Page() {
             />
             {/* TEXT */}
             <div className="pt-0 pb-2">
-              <div className="text-center text-2xl text-slate-900 pb-1=0">
+              <div className="text-center text-2xl text-slate-900 pb-1 animate-delay-[.2s] animate-fade-up animate-once">
                 Milk & Cookies for Santa
               </div>
-              <div className="text-center text-base text-slate-900 pb-1">
+              <div className="text-center text-base text-slate-900 pb-1 animate-delay-[.4s] animate-fade-up animate-once">
                 Add to your favorite cart
               </div>
             </div>
             {/* Pills */}
             <Pills />
-            <div className="h-24 bg-slate-100 animate-delay-[1.2s] animate-fade animate-once">
+            <div className="h-24 bg-slate-100 animate-delay-[1.6s] animate-fade animate-once">
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY,
