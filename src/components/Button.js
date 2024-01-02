@@ -20,9 +20,7 @@ export default function Button(props) {
             {props.title}
           </div>
           <div>
-            <ChevronRightIcon
-              className={`h-6 w-6 group-hover:animate-ping ${props.textColor}`}
-            />
+            <ChevronRightIcon className={`h-6 w-6 ${props.textColor}`} />
           </div>
         </div>
       </div>
