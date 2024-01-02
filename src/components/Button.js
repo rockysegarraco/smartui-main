@@ -4,7 +4,7 @@ export default function Button(props) {
   return (
     <div>
       <div
-        className={`flex w-full ${props.bg} justify-between rounded-full p-1 items-center pr-4 hover:bg-opacity-90 cursor-pointer`}
+        className={`flex w-full ${props.bg} ${props.animate} justify-between rounded-full p-1 items-center pr-4 hover:bg-opacity-90 cursor-pointer`}
       >
         <div className="group flex grow flex-row items-center rounded-full justify-between">
           <div>
