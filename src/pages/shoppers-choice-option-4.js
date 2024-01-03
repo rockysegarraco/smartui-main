@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
-import Slider from "@/components/Slider";
+import NoLogoSlider from "@/components/Sliders/NoLogoSlider";
 import Select from "@/components/Buttons/Select";
 import NavSmartSite from "@/components/NavSmartSite";
 import GoogleMapReact from "google-map-react";
@@ -36,11 +36,11 @@ export default function Page() {
             </div>
             <div className="pt-2 pb-2">
               <div className="px-6 py-2 font-bold">Delivery/Pickup</div>
-              <Slider />
+              <NoLogoSlider />
             </div>
             <div className="pt-0 pb-4">
               <div className="px-6 py-2 font-bold">Ship It</div>
-              <Slider />
+              <NoLogoSlider />
             </div>
             <div className="h-24 bg-slate-100 animate-delay-[1.2s] animate-fade animate-once">
               <GoogleMapReact
