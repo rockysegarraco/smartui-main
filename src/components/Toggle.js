@@ -31,7 +31,7 @@ export default function Example() {
       </Switch>
       <Switch.Label as="span" className="ml-3 text-sm">
         <span className="font-medium text-gray-900">
-          Show Local Options Only
+          Show local options only
         </span>{" "}
       </Switch.Label>
     </Switch.Group>
