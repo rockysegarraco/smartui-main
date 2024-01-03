@@ -20,10 +20,10 @@ export default function Page() {
             </div>
           </div>
           <div className="col-span-1 rounded-md pt-4 lg:pt-6 px-4">
-            <div className="pb-2">
+            <div className="pb-2 animate-delay-[.6s] animate-fade animate-once">
               <DarkButtonMap />
             </div>
-            <div className="flex flex-row gap-x-2">
+            <div className="flex flex-row gap-x-2 animate-delay-[.7s] animate-fade animate-once">
               <div className="lg:basis-1/2 basis-1/2 text-center py-2 px-4 bg-[#006241] rounded-full uppercase text-sm cursor-pointer">
                 <div className="flex items-center justify-center">
                   <div>
