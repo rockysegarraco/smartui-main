@@ -5,16 +5,7 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 
 import WidgetMap from "@/components/Widgets/WidgetMap";
 
-const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
-];
-
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <div className="bg-[#1E3932] lg:h-screen">
       <div className="relative isolate pt-0">
