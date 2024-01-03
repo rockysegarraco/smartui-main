@@ -19,7 +19,7 @@ export default function Example() {
             </h1>
             <p className="mt-6 text-lg leading-6 text-white max-w-full lg:max-w-4xl lg:text-left text-center">
               A smooth, well-rounded blend of Latin American coffees with subtle
-              notes of cocoa and rich praline, it's perfect for every day.
+              notes of cocoa and rich praline, its perfect for every day.
             </p>
             <div className="mt-4 overflow-scroll">
               <img
