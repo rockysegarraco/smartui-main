@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import Slider from "@/components/Slider";
+import Toggle from "@/components/Toggle";
 import NavSmartSite from "@/components/NavSmartSite";
 import GoogleMapReact from "google-map-react";
 
@@ -28,6 +29,9 @@ export default function Page() {
               <div className="text-center text-base text-slate-900 pb-1 animate-delay-[.2s] animate-fade-up animate-once">
                 Add to your favorite cart
               </div>
+            </div>
+            <div className="pt-2 pb-4 px-6">
+              <Toggle />
             </div>
             {/* Pills */}
             <div className="pt-2 pb-4">
