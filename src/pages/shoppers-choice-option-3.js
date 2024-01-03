@@ -30,7 +30,7 @@ export default function Page() {
                 Add to your favorite cart
               </div>
             </div>
-            <div className="pt-2 pb-4 px-6">
+            <div className="pt-2 pb-4 px-6 align-center">
               <Toggle />
             </div>
             {/* Pills */}

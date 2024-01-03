@@ -9,7 +9,10 @@ export default function Example() {
   const [enabled, setEnabled] = useState(false);
 
   return (
-    <Switch.Group as="div" className="flex items-center">
+    <Switch.Group
+      as="div"
+      className="flex items-center animate-delay-[.3s] animate-fade-up animate-once"
+    >
       <Switch
         checked={enabled}
         onChange={setEnabled}
