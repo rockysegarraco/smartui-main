@@ -34,6 +34,17 @@ export default function Page() {
           </div> */}
         </div>
       </div>
+      <div className="h-24 bg-slate-100 animate-delay-[1s] animate-fade animate-once">
+        <GoogleMapReact
+          bootstrapURLKeys={{
+            key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY,
+            libraries: ["places"],
+          }}
+          defaultCenter={location}
+          defaultZoom={15}
+          yesIWantToUseGoogleMapApiInternals
+        ></GoogleMapReact>
+      </div>
       <div>
         <Share />
       </div>

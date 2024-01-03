@@ -21,7 +21,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$16.98</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
+                  CART it!
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$35.82</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
+                  CART it!
                 </div>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$41.99</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
+                  CART it!
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$39.98</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full  font-medium">
-                  CART
+                  CART it!
                 </div>
               </div>
             </div>
