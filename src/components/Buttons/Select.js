@@ -17,9 +17,9 @@ export default function SelectSmall() {
           value="1"
           label="Choose"
         >
-          <MenuItem value={1}>Fastest Delivery</MenuItem>
-          <MenuItem value={2}>Lowest Price</MenuItem>
-          <MenuItem value={3}>Near my Location</MenuItem>
+          <MenuItem value={1}>Fastest delivery</MenuItem>
+          <MenuItem value={2}>Lowest price</MenuItem>
+          <MenuItem value={3}>Near my location</MenuItem>
         </Select>
       </FormControl>
     </>
