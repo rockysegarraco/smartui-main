@@ -34,6 +34,14 @@ export default function Page() {
             </div>
           </div>
           {/* BUTTONS */}
+          <div className="flex flex-row px-6 mb-1 gap-x-2 ">
+            <div className="basis-1/2 py-2 px-4 border border-[#006241] text-[#006241] rounded-full text-center hover:bg-[#006241] hover:text-white cursor-pointer">
+              Ship it
+            </div>
+            <div className="basis-1/2 py-2 px-4 border border-[#006241] text-[#006241] rounded-full text-center hover:bg-[#006241] hover:text-white cursor-pointer">
+              Delivery/Pickup
+            </div>
+          </div>
           <div className="pt-2">
             <Pills />
           </div>
