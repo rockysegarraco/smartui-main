@@ -9,13 +9,11 @@ export default function SelectSmall() {
   return (
     <>
       <FormControl fullWidth size="small">
-        <InputLabel id="demo-select-small-label">Choose</InputLabel>
         <Select
           className="bg-white"
           labelId="demo-select-small-label"
           id="demo-select-small"
           value="1"
-          label="Choose"
         >
           <MenuItem value={1}>8 oz</MenuItem>
           <MenuItem value={2}>12 oz</MenuItem>

@@ -1,33 +1,36 @@
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ChevronRightIcon } from "@heroicons/react/20/solid";
+
 import Widget from "@/components/Widget";
 
-export default function HalfPage() {
+export default function Example() {
   return (
-    <div className="relative isolate overflow-hidden bg-auto bg-no-repeat bg-center  bg-[url('/img/brown_MoltonCookies_h.jpg')]">
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
-          <img
-            className="h-24"
-            src="https://bigtreefarms.com/wp-content/uploads/2021/08/Logo.svg"
-            alt="Your Company"
-          />
-
-          <h1 className="mt-10 text-4xl font-bold text-gray-900 sm:text-6xl">
-            Organic Brown Coconut Sugar
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Unrefined, low glycemic and rich in essential nutrients, our Brown
-            Coconut Sugar is rooted in tradition. Minimally processed using the
-            same ancient methods that are passed down generation to generation.
-            Offers an incredibly delicious and better-for-you 1:1 replacement to
-            cane sugar.
-          </p>
-          <div className="mt-10">
-            <Widget />
+    <div className="bg-[#1E3932]">
+      <div className="relative isolate pt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 mx-auto max-w-full px-6 py-8 sm:py-32 lg:gap-x-10 lg:px-24 lg:py-20">
+          <div className="col-span-1 lg:col-span-8 xl:col-span-5 lg:mx-0 lg:flex-auto order-2 lg:order-1">
+            <h1 className="mt-4 max-w-lg text-4xl font-bold text-white sm:text-6xl lg:text-left text-center">
+              Pike Place<span className="font-normal">®</span> Roast
+            </h1>
+            <h1 className="mt-2 max-w-lg text-2xl font-normal text-white sm:text-3xl lg:text-left text-center">
+              K-Cup<span className="font-normal">®</span> Pods
+            </h1>
+            <p className="mt-6 text-lg leading-6 text-white max-w-full lg:max-w-4xl lg:text-left text-center">
+              A smooth, well-rounded blend of Latin American coffees with subtle
+              notes of cocoa and rich praline, its perfect for every day.
+            </p>
+            <div className="mt-4">
+              <Widget />
+            </div>
           </div>
-        </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
-            <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4"></div>
+          <div className="col-span-1 lg:col-span-4 xl:col-span-7 mx-auto order-1 lg:order-2">
+            <img
+              className="w-full"
+              src="img/Screenshot 2023-12-28 at 5.52.44 PM.png"
+              alt=""
+            />
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function Example() {
     <div className="bg-[#1E3932] lg:h-screen">
       <div className="relative isolate pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 mx-auto max-w-full px-6 py-8 sm:py-32 lg:gap-x-10 lg:px-24 lg:py-20">
-          <div className="col-span-1 lg:col-span-7 lg:mx-0 lg:flex-auto order-2 lg:order-1">
+          <div className="col-span-1 lg:col-span-8 xl:col-span-7 lg:mx-0 lg:flex-auto order-2 lg:order-1">
             <h1 className="mt-4 max-w-lg text-4xl font-bold text-white sm:text-6xl lg:text-left text-center">
               Pike Place<span className="font-normal">®</span> Roast
             </h1>
@@ -32,7 +32,7 @@ export default function Example() {
               <WidgetMap />
             </div>
           </div>
-          <div className="col-span-1 lg:col-span-5 mx-auto order-1 lg:order-2">
+          <div className="col-span-1 lg:col-span-4 xl:col-span-5 mx-auto order-1 lg:order-2">
             <img
               className="w-full"
               src="img/Screenshot 2023-12-28 at 5.52.44 PM.png"

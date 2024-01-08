@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 export default function ButtonMap() {
   return (
     <div>
-      <div className="flex flex-col gap-y-1 px-6 pb-6">
+      <div className="flex flex-col gap-y-1 px-6 pb-4">
         <Button
           title="Add to Cart"
           ImageUrl="https://s3.us-west-2.amazonaws.com/retailerlogos.smartcommerce.co/img/supers/sc/us/small/targetpoweredbyinstacart_usa_dark.svg"
