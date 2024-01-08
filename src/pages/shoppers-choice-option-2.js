@@ -1,15 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Pills from "@/components/Buttons/Pills";
 import ButtonMap from "@/components/Buttons/ButtonMap";
 import Share from "@/components/Share";
-import GoogleMapReact from "google-map-react";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Page() {
-  const location = {
-    lat: 26.1188486,
-    lng: -80.13108199999999,
-  };
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 6000);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
   return (
     <>
       <div>
