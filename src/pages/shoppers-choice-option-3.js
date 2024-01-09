@@ -30,7 +30,7 @@ export default function Page() {
           {/* TEXT */}
           <div className="pt-0 pb-2">
             <div className="text-center px-8 text-2xl font-semibold text-[#006241] pb-4 animate-delay-[.2s] animate-fade-up animate-once">
-              You may receive either package while we transition.
+              Never Miss a Cup.
             </div>
           </div>
           {/* BUTTONS */}
