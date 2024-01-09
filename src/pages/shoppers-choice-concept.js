@@ -53,6 +53,7 @@ function App() {
               ImageUrl="https://click2cart.com/img/supers/sc/ca/small/instacart_ca_dark.svg"
               bg="bg-[#003E29]"
               textColor="text-white"
+              animate="animate-delay-[.4s] animate-fade-up animate-once"
               openModal={openModal}
             />
             <PillsComplex
@@ -60,6 +61,7 @@ function App() {
               ImageUrl="https://s3.us-west-2.amazonaws.com/retailerlogos.stage-smartcommerce.co/img/supers/sc/us/small/target_usa_dark.svg"
               bg="bg-[#CC0000]"
               textColor="text-white"
+              animate="animate-delay-[.5s] animate-fade-up animate-once"
               openModal={openModal}
             />
             <PillsComplex
@@ -67,6 +69,7 @@ function App() {
               ImageUrl="https://click2cart.com/img/supers/sc/us/small/amazon_usa_dark.svg"
               bg="bg-[#000000]"
               textColor="text-white"
+              animate="animate-delay-[.6s] animate-fade-up animate-once"
               openModal={openModal}
             />
             <PillsComplex
@@ -74,6 +77,7 @@ function App() {
               ImageUrl="https://s3.us-west-2.amazonaws.com/retailerlogos.stage-smartcommerce.co/img/supers/sc/us/small/publixinstacart_usa_dark.svg"
               bg="bg-[#3F8F2C]"
               textColor="text-white"
+              animate="animate-delay-[.7s] animate-fade-up animate-once"
               openModal={openModal}
             />
           </div>
