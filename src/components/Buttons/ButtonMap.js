@@ -1,19 +1,15 @@
 import { MapIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon } from "@heroicons/react/24/solid";
 
 export default function ButtonMap() {
   return (
     <div>
       <div className="pt-1">
-        <div className="rounded-full p-1.5 hover:bg-opacity-90 cursor-pointer text-center bg-[#006241] hover:bg-[#006241]/75">
+        <div className="text-blue-700 border border-blue-700 rounded-full py-2 hover:bg-opacity-90 cursor-pointer text-center bg-[#E9E9EE] hover:bg-blue-700 hover:text-white">
           <div className="flex justify-center items-center">
-            <img
-              className="h-8 pr-1"
-              src="img/map-map-marker-svgrepo-com.svg"
-            />
+            <MapPinIcon className="h-6 pr-1" />
 
-            <div className="font-bold text-sm text-white uppercase">
-              Find Near Me
-            </div>
+            <div className="text-sm">Find Near Me</div>
           </div>
         </div>
       </div>

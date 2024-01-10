@@ -7,7 +7,7 @@ export default function ButtonMap() {
       <div className="flex flex-col gap-y-1 px-6 pb-4">
         <Button
           title="Add to Cart"
-          ImageUrl="https://s3.us-west-2.amazonaws.com/retailerlogos.smartcommerce.co/img/supers/sc/us/small/targetpoweredbyinstacart_usa_dark.svg"
+          ImageUrl="https://click2cart.com/img/supers/sc/us/small/target_usa_dark.svg"
           bg="bg-[#CC0000]"
           animate="animate-delay-[.4s] animate-fade-up animate-once"
           textColor="text-white"

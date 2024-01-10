@@ -4,6 +4,7 @@ import Pills from "@/components/Buttons/Pills";
 import ButtonMap from "@/components/Buttons/ButtonMap";
 import Share from "@/components/Share";
 import LoadingScreen from "@/components/LoadingScreen";
+import { CheckIcon } from "@heroicons/react/24/solid";
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,10 +36,15 @@ export default function Page() {
           </div>
           {/* BUTTONS */}
           <div className="flex flex-row px-6 mb-1 gap-x-2 animate-delay-[1.2s] animate-fade-up animate-once">
-            <div className="basis-1/2 py-2 px-4 border border-[#006241] text-[#006241] rounded-full text-center hover:bg-[#006241] hover:text-white cursor-pointer">
-              Ship it
+            <div className="text-sm basis-1/3 py-2 px-4 bg-blue-700 text-white rounded-full text-center hover:text-white cursor-pointer">
+              <div className="flex flex-row items-center font-bold">
+                <CheckIcon className="h-4 pr-2" /> Ship it
+              </div>
             </div>
-            <div className="basis-1/2 py-2 px-4 border border-[#006241] text-[#006241] rounded-full text-center hover:bg-[#006241] hover:text-white cursor-pointer">
+            <div
+              className="text-sm basis-1/3 py-2 px-4 border border-blue-700 text-blue-700 rounded-full text-center cursor-pointer 
+            bg-[#E9E9EE] hover:bg-blue-700 hover:text-white"
+            >
               Delivery/Pickup
             </div>
           </div>
