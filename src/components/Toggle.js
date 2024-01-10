@@ -17,8 +17,8 @@ export default function Example() {
         checked={enabled}
         onChange={setEnabled}
         className={classNames(
-          enabled ? "bg-[#006241]" : "bg-[#006241]/20",
-          "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#006241] focus:ring-offset-2"
+          enabled ? "bg-blue-700" : "bg-blue-700/20",
+          "relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-700/50 focus:ring-offset-2"
         )}
       >
         <span
@@ -30,7 +30,7 @@ export default function Example() {
         />
       </Switch>
       <Switch.Label as="span" className="ml-3 text-sm">
-        <span className="font-medium text-[#006241]">
+        <span className="font-medium text-blue-700">
           Show local options only
         </span>{" "}
       </Switch.Label>

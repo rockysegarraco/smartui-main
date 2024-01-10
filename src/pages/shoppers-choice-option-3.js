@@ -51,7 +51,7 @@ export default function Page() {
           <div className="pt-2">
             <Pills />
           </div>
-          <div className="px-6 pb-4 animate-delay-[1.2s] animate-fade animate-onc">
+          <div className="px-6 pb-4 animate-delay-[1.2s] animate-fade animate-once">
             {" "}
             <ButtonMap />
           </div>

@@ -35,13 +35,13 @@ export default function Page() {
             </div>
           </div>
           {/* BUTTONS */}
-          <div className="border border-[#006241]/50 mx-6 px-2 rounded-full py-2 mb-1animate-delay-[1.2s] animate-fade-up animate-once">
+          <div className="border border-blue-700/50 mx-6 px-2 rounded-full py-2 mb-1animate-delay-[1.2s] animate-fade-up animate-once">
             <Toggle />
           </div>
           <div className="pt-2">
             <Pills />
           </div>
-          <div className="px-6 pb-4 animate-delay-[1.2s] animate-fade animate-onc">
+          <div className="px-6 pb-4 animate-delay-[1.2s] animate-fade animate-once">
             {" "}
             <ButtonMap />
           </div>
