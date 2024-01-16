@@ -12,7 +12,7 @@ export default function Button(props) {
               <img className="h-10" src={props.ImageUrl} alt="" />
             </div>
             <div
-              className={`uppercase font-medium text-md hover:text-sm ${props.textColor} text-center item-center group-hover:animate-jump-in`}
+              className={`uppercase font-medium text-md ${props.textColor} text-center item-center group-hover:animate-jump-in`}
             >
               {props.title}
             </div>
