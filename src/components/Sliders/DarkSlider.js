@@ -21,7 +21,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$16.98</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
+                  <div className="text-[14px]">Amazon</div>
                 </div>
               </div>
             </div>
@@ -34,7 +34,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$35.82</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
+                  <div className="text-[14px]">Wal-Mart</div>
                 </div>
               </div>
             </div>
@@ -47,20 +47,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$41.99</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  CART
-                </div>
-              </div>
-            </div>
-            <div className="group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm lg:block md:block hidden hover:bg-opacity-90 animate-delay-[.4s] animate-fade-up animate-once">
-              <div className="flex flex-col gap-y-1">
-                <img
-                  className="h-12 group-hover:animate-bounce ease-in"
-                  src="https://click2cart.com/img/supers/sc/us/small/samsclub_usa_light.svg"
-                  alt="Retailer"
-                />
-                <div className="lg:text-base text-sm text-white">$39.98</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full  font-medium">
-                  CART
+                  <div className="text-[14px]">Bj's</div>
                 </div>
               </div>
             </div>

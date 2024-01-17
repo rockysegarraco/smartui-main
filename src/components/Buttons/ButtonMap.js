@@ -9,7 +9,7 @@ export default function ButtonMap() {
     <div>
       <div className="pt-1">
         <div
-          className="text-blue-700 border border-blue-700 rounded-full py-1 hover:bg-opacity-90 cursor-pointer text-center bg-[#E9E9EE] hover:bg-blue-700 hover:text-white"
+          className="text-blue-700 border-blue-700 rounded-full py-2 hover:bg-opacity-90 cursor-pointer text-center bg-[#E9E9EE] hover:bg-blue-700 hover:text-white"
           onClick={() => setOpen(true)}
         >
           <div className="flex justify-center items-center">

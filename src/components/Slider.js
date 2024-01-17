@@ -12,7 +12,7 @@ export default function Slider() {
         </div>
         <div className="flex-auto text-center cursor-pointer lg:overflow-hidden">
           <div className="flex items-center w-full gap-x-2">
-            <div className="group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.2s] animate-fade-up animate-once">
+            <div className="md:basis-1/3 lg:basis-1/3 basis-1/2 group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.2s] animate-fade-up animate-once">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -20,12 +20,15 @@ export default function Slider() {
                   alt="Retailer"
                 />
                 <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-blue-700 rounded-full">
-                  CART
+                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full w-full">
+                  <span className="group-hover:hidden">Wal-Mart</span>
+                  <span className="hidden group-hover:block font-bold">
+                    Cart it!
+                  </span>
                 </div>
               </div>
             </div>
-            <div className="group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.4s] animate-fade-up animate-once">
+            <div className="md:basis-1/3 lg:basis-1/3 basis-1/2 group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.4s] animate-fade-up animate-once">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -33,12 +36,15 @@ export default function Slider() {
                   alt="Retailer"
                 />
                 <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-blue-700 rounded-full">
-                  CART
+                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full">
+                  <span className="group-hover:hidden">Amazon</span>
+                  <span className="hidden group-hover:block font-bold">
+                    Cart it!
+                  </span>
                 </div>
               </div>
             </div>
-            <div className="group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.6s] animate-fade-up animate-once">
+            <div className="md:basis-1/3 lg:basis-1/3 group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md animate-delay-[.6s] animate-fade-up animate-once lg:block hidden ">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -46,21 +52,11 @@ export default function Slider() {
                   alt="Retailer"
                 />
                 <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-blue-700 rounded-full">
-                  CART
-                </div>
-              </div>
-            </div>
-            <div className="group grow bg-slate-50 pt-4 pb-4 px-2 rounded-md lg:block md:block hidden animate-delay-[.8s] animate-fade-up animate-once">
-              <div className="flex flex-col gap-y-1">
-                <img
-                  className="h-12 group-hover:animate-bounce ease-in"
-                  src="https://s3.us-west-2.amazonaws.com/retailerlogos.smartcommerce.co/img/supers/sc/ca/small/instacart_ca_dark.svg"
-                  alt="Retailer"
-                />
-                <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-blue-700 rounded-full">
-                  CART
+                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full">
+                  <span className="group-hover:hidden">Bjs</span>
+                  <span className="hidden group-hover:block font-bold">
+                    Cart it!
+                  </span>
                 </div>
               </div>
             </div>

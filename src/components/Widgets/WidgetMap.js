@@ -23,14 +23,6 @@ export default function Page() {
             <div className="pb-2 animate-delay-[.6s] animate-fade animate-once">
               <ButtonMap />
             </div>
-            <div className="flex items-center border-t bg-[#E9E9EE] rounded-full">
-              <div className="basis-1/2 text-center text-[#E60023] border-r border-[#787878]/30 px-4 py-2">
-                <img className="mx-auto h-10" src="img/Group 6.svg" />
-              </div>
-              <div className="basis-1/2 text-center text-[#E60023] px-4 py-2">
-                <img className="mx-auto h-10" src="img/Group 7.svg" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
