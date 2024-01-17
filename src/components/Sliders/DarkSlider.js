@@ -12,7 +12,7 @@ export default function Slider() {
         </div>
         <div className="flex-auto text-center cursor-pointer md:overflow-hidden">
           <div className="flex items-center w-full gap-x-2">
-            <div className="group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.1s] animate-fade-up animate-once">
+            <div className="basis-1/2 lg:basis-1/3 group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.1s] animate-fade-up animate-once">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -25,7 +25,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div className="group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.2s] animate-fade-up animate-once">
+            <div className="basis-1/2 lg:basis-1/3 group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.2s] animate-fade-up animate-once">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
@@ -38,7 +38,7 @@ export default function Slider() {
                 </div>
               </div>
             </div>
-            <div className="group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.3s] animate-fade-up animate-once">
+            <div className="basis-1/2 lg:basis-1/3 group grow bg-[#243F38] pt-4 pb-4 px-2 rounded-md shadow-sm animate-delay-[.3s] animate-fade-up animate-once lg:block hidden">
               <div className="flex flex-col gap-y-1">
                 <img
                   className="h-12 group-hover:animate-bounce ease-in"
