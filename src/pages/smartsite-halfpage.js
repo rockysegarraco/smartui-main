@@ -24,10 +24,10 @@ export default function Example() {
               nourishing dry hair for lasting softness. (*vs non-conditioning
               shampoo)
             </p>
+            <div className="font-bold mb-4">
+              How does it work? – The Pro-V Nutrients.
+            </div>
             <p className="mt-6 text-lg leading-6 text-black max-w-full lg:max-w-4xl">
-              <div className="font-bold mb-4">
-                How does it work? – The Pro-V Nutrients.
-              </div>
               Moisturizing Lipids: Absorb into each strand to rebuild flexible
               restore hair with moisture. <br /> <br />
               Protective Antioxidant, Histidine: – Goes deep into hair’s core to
