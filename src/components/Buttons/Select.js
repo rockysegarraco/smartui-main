@@ -15,7 +15,7 @@ export default function SelectSmall() {
           labelId="demo-select-small-label"
           id="demo-select-small"
           value="1"
-          label="Choose"
+          label="Chooses"
         >
           <MenuItem value={1}>Fastest delivery</MenuItem>
           <MenuItem value={2}>Lowest price</MenuItem>
