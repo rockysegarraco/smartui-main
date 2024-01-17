@@ -15,7 +15,7 @@ export default function Modal({ open, onClose, children }) {
         className={`bg-white shadow p-0 transition-all
           ${
             open
-              ? "scale-100 opacity-100 animate-fade-up animate-once"
+              ? "scale-100 opacity-100 lg:animate-fade animate-fade-up animate-once"
               : "scale-100 opacity-0 "
           }
         `}
