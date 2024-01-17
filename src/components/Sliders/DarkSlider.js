@@ -47,7 +47,7 @@ export default function Slider() {
                 />
                 <div className="lg:text-base text-sm text-white">$41.99</div>
                 <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  <div className="text-[14px]">Bjs</div>
+                  <div className="text-[14px]">Bj&lsquo;s</div>
                 </div>
               </div>
             </div>
