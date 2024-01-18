@@ -13,7 +13,7 @@ export default function ButtonMap() {
           onClick={() => setOpen(true)}
         >
           <div className="flex justify-center items-center">
-            <MapPinIcon className="h-6 pr-1" />
+            <MapIcon className="h-6 pr-1" />
             <div className="text-sm">Find Near Me</div>
           </div>
         </div>
