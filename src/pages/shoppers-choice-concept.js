@@ -82,7 +82,7 @@ function App() {
             />
           </div>
 
-          <div className="flex flex-row justify-between px-8 py-4 gap-y-3 mt-1 bg-white">
+          <div className="flex flex-row justify-between px-4 py-4 gap-y-3 mt-1 bg-white">
             <div className="flex text-blue-500 hover:text-blue-400 cursor-pointer item-center">
               <div className="flex flex-row">
                 <div>

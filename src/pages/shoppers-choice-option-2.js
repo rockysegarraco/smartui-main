@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Pills from "@/components/Buttons/Pills";
 import ButtonMap from "@/components/Buttons/ButtonMap";
 import Share from "@/components/Share";
+import Zip from "@/components/Zip";
 import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Page() {
@@ -40,8 +41,12 @@ export default function Page() {
             </div>
             {/* Pills */}
             <Pills />
-            <div className="px-6 pb-4 animate-delay-[1.4s] animate-fade animate-once">
+            {/*             <div className="px-6 pb-4 animate-delay-[1.4s] animate-fade animate-once">
               <ButtonMap />
+            </div> */}
+
+            <div>
+              <Zip />
             </div>
             {/* SHARE */}
             <Share />
