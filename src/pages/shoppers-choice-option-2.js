@@ -44,7 +44,6 @@ export default function Page() {
             {/*             <div className="px-6 pb-4 animate-delay-[1.4s] animate-fade animate-once">
               <ButtonMap />
             </div> */}
-
             <div>
               <Zip />
             </div>
