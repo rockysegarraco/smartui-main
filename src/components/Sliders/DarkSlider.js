@@ -19,9 +19,9 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/walmart_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm text-white">$16.98</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  <div className="text-[14px]">Amazon</div>
+                <div className="lg:text-base text-xs text-white">$16.98</div>
+                <div className="px-4 py-2 text-xs uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
+                  <div className="text-[14px]">Wal-mart</div>
                 </div>
               </div>
             </div>
@@ -32,9 +32,9 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/amazon_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm text-white">$35.82</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
-                  <div className="text-[14px]">Wal-Mart</div>
+                <div className="lg:text-base text-xs text-white">$35.82</div>
+                <div className="px-4 py-2 text-xs uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
+                  <div className="text-[14px]">Amazon</div>
                 </div>
               </div>
             </div>
@@ -45,8 +45,8 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/bjs_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm text-white">$41.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
+                <div className="lg:text-base text-xs text-white">$41.99</div>
+                <div className="px-4 py-2 text-xs uppercase text-white bg-[#006241] rounded-full font-medium hover:bg-opacity-90">
                   <div className="text-[14px]">Bj&lsquo;s</div>
                 </div>
               </div>
