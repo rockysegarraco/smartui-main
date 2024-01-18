@@ -49,14 +49,20 @@ export default function Page() {
             <div className="py-4 px-0 lg:px-4">
               <Slider />
             </div>
-            <div className="flex flex-row flex-wrap px-0 mb-1 gap-x-2 animate-delay-[1.2s] animate-fade animate-once gap-y-2 justify-center lg:justify-start">
-              <div className="pb-2 animate-delay-[.6s] animate-fade animate-once">
+            <div className="px-0 mb-1 gap-x-2 animate-delay-[1.2s] animate-fade animate-once gap-y-2">
+              <div className="flex justify-between items-center pb-2 animate-delay-[.6s] animate-fade animate-once gap-x-4">
+                <div className="flex justify-center items-center text-blue-700">
+                  <MapPinIcon className="h-6 pr-1" />
+                  <div className="text-sm  underline underline-offset-4">
+                    32724
+                  </div>
+                </div>
                 <div
                   className="text-sm py-2 px-6 border border-[#936E2A] text-black rounded-full text-center hover:text-white hover:bg-[#936E2A] cursor-pointer"
                   onClick={() => setOpen(true)}
                 >
                   <div className="flex justify-center items-center">
-                    <MapPinIcon className="h-6 pr-1" />
+                    <MapIcon className="h-6 pr-1" />
                     <div className="text-sm">Find Near Me</div>
                   </div>
                 </div>

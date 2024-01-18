@@ -19,8 +19,8 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/walmartgrocery_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full w-full">
+                <div className="lg:text-base text-xs">$999.99</div>
+                <div className="px-4 py-2 text-xs uppercase text-white bg-[#936E2A] rounded-full w-full">
                   <span className="group-hover:hidden">Wal-Mart</span>
                   <span className="hidden group-hover:block font-bold">
                     Cart it!
@@ -35,8 +35,8 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/amazon_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full">
+                <div className="lg:text-base text-xs">$999.99</div>
+                <div className="px-4 py-2 text-xs uppercase text-white bg-[#936E2A] rounded-full">
                   <span className="group-hover:hidden">Amazon</span>
                   <span className="hidden group-hover:block font-bold">
                     Cart it!
@@ -51,9 +51,9 @@ export default function Slider() {
                   src="https://click2cart.com/img/supers/sc/us/small/bjs_usa_dark.svg"
                   alt="Retailer"
                 />
-                <div className="lg:text-base text-sm">$999.99</div>
-                <div className="px-4 py-2 text-sm uppercase text-white bg-[#936E2A] rounded-full">
-                  <span className="group-hover:hidden">Bjs</span>
+                <div className="lg:text-base text-xs">$999.99</div>
+                <div className="px-2 py-2 text-xs uppercase text-white bg-[#936E2A] rounded-full">
+                  <span className="group-hover:hidden">Bj&lsquo;s</span>
                   <span className="hidden group-hover:block font-bold">
                     Cart it!
                   </span>

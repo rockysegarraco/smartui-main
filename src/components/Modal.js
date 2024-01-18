@@ -12,7 +12,7 @@ export default function Modal({ open, onClose, children }) {
       {/* modal */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-white shadow p-0 transition-all
+        className={`bg-white shadow p-0 transition-all z-50
           ${
             open
               ? "scale-100 opacity-100 lg:animate-fade animate-fade-up animate-once"

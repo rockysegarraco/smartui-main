@@ -9,8 +9,8 @@ export default function Example() {
   return (
     <div className="bg-white lg:h-screen lg:p-0 p-4">
       <div className="relative isolate pt-0">
-        <div className="grid grid-cols-1 lg:grid-cols-12 mx-auto max-w-full px-6 py-8 lg:gap-x-10 lg:px-48 lg:py-12">
-          <div className="col-span-1 lg:col-span-8 xl:col-span-6 lg:mx-0 order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-12 mx-auto max-w-full px-6 py-8 lg:gap-x-16 lg:px-48 lg:py-24">
+          <div className="col-span-1 lg:col-span-8 xl:col-span-6 lg:mx-0 order-2 lg:order-2">
             <h1 className="mt-4 max-w-lg text-2xl font-bold text-black sm:text-4xl">
               DAILY MOISTURE SHAMPOO
             </h1>
@@ -37,7 +37,7 @@ export default function Example() {
               <Widget />
             </div>
           </div>
-          <div className="col-span-1 lg:col-span-4 xl:col-span-6 mx-auto order-1 lg:order-2 lg:mb-0 mb-4">
+          <div className="col-span-1 lg:col-span-4 xl:col-span-6 mx-auto order-1 lg:order-1 lg:mb-0 mb-4">
             <img
               className="w-full border"
               src="https://images.ctfassets.net/r9udlqyetmm3/2GwqnMP0l62nzNq9fkzAlu/da62d639d47104a8218f95bf622cf99a/080878195565_C1N1_dt.jpg?fm=webp"
