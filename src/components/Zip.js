@@ -7,7 +7,7 @@ export default function Button(props) {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <div className="flex flex-row justify-between px-6 py-4 gap-y-3 mt-1 border-b border-[#787878]/30">
+      <div className="flex flex-row justify-between px-4 py-4 gap-y-4 mt-1 border-b border-[#787878]/30">
         <div className="text-[#4363F8] hover:text-blue-700 cursor-pointer item-center  hover:underline underline-offset-4">
           <div className="flex flex-row items-center">
             <div>
