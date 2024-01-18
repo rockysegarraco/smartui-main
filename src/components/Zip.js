@@ -13,7 +13,7 @@ export default function Button(props) {
             <div>
               <MapPinIcon className="h-6 pr-1" />
             </div>
-            <div className="">32725</div>
+            <div className="underline underline-offset-4">32725</div>
           </div>
         </div>
         <div
@@ -23,7 +23,7 @@ export default function Button(props) {
           <div>
             <MapIcon className="h-6 pr-1" />
           </div>
-          <div className="">Find Near Me</div>
+          <div className="underline underline-offset-4">Find Near Me</div>
         </div>
       </div>
       <Modal open={open} onClose={() => setOpen(false)}>
