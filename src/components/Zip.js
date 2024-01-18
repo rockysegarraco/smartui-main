@@ -29,7 +29,7 @@ export default function Button(props) {
         </div>
       </div>
       <Modal open={open} onClose={() => setOpen(false)}>
-        <div className="text-center w-full">
+        <div className="text-center w-full z-50">
           <img className="hidden lg:block" src="/./img/locator-desk.jpg" />
           <img className="block lg:hidden" src="/./img/mobile-locator.jpg" />
         </div>
