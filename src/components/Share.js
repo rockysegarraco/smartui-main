@@ -8,7 +8,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 export default function SelectSmall() {
   return (
     <>
-      <div className="flex items-center border-t bg-[#E9E9EE] sticky bottom-0">
+      <div className="flex items-center border-t bg-[#E9E9EE]">
         <div className="basis-1/2 text-center text-[#E60023] border-r border-[#787878]/10 px-4 py-2">
           <img className="mx-auto h-12" src="img/Group 6.svg" />
         </div>

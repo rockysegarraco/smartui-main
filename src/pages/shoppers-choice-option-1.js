@@ -46,7 +46,7 @@ export default function Page() {
             {tab === "Ship it" && <ShippingTab />}
 
             {/* SHARE BTN */}
-            <div className="flex items-center border-t">
+            <div className="flex items-center border-t ">
               <div className="flex-auto text-center p-4 border-r">
                 <div className="flex items-center justify-center">
                   <div>
