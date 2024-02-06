@@ -12,7 +12,7 @@ export default function Page() {
     // Simulate an API call
     setTimeout(() => {
       setIsLoading(false);
-    }, 6000);
+    }, 2000);
   }, []);
 
   if (isLoading) {
