@@ -1,4 +1,8 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon } from "@heroicons/react/24/solid";
+import { MapIcon } from "@heroicons/react/24/solid";
+import { XCircleIcon } from "@heroicons/react/24/solid";
+
 export default function Modal({ open, onClose, children }) {
   return (
     // backdrop
@@ -20,8 +24,20 @@ export default function Modal({ open, onClose, children }) {
           }
         `}
       >
-        <div className="border-b p-4 uppercase font-bold">
-          Find Your Product
+        <div className="border-b p-4 uppercase">
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row items-center">
+              <div className="font-bold">Find Your Product</div>
+              <div className="px-4 text-slate-300">|</div>
+              <div>
+                <MapPinIcon className="h-6 pr-1" />
+              </div>
+              <div>32725</div>
+            </div>
+            <div>
+              <XCircleIcon className="h-[20px] pl-8 text-slate-600" />
+            </div>
+          </div>
         </div>
         <button
           onClick={onClose}
