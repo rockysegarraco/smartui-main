@@ -34,20 +34,24 @@ function App() {
       <Sidebar isOpen={isOpen} closeModal={closeModal} />
       <div className="relative mx-auto max-w-7xl bg-slate-300">
         <div className="bg-[#0E52A1] py-6 px-6 sticky top-0 z-10">
-          <div className="flex text-white items-center justify-between">
+          <div className="flex text-white items-center justify-between lg:gap-x-2 gap-x-4">
             <div className="font-medium text-sm lg:text-2xl">
               Choose your favorite products to save to your basket.
             </div>
             <div
-              className="flex justify-center text-white py-2 px-6 rounded-full text-center font-bold bg-white cursor-pointer lg:text-base text-xs"
+              className="flex justify-center text-white py-2 px-8 md:py-2 lg:py-4 lg:px-6 rounded-full text-center font-bold bg-white cursor-pointer lg:text-base text-xs"
               onClick={openModal}
             >
               <div className="flex items-center justify-center gap-x-4">
                 <div className="text-black text-base">
-                  0 <span className="hidden lg:block">items</span>
+                  <span className="hidden md:block lg:block">2 Items</span>
+                  <span className="block md:hidden lg:hidden text-base">2</span>
                 </div>
                 <div>
-                  <img src="https://click2cart.com/assets/img/basket.svg?20240319T050807194229" />
+                  <img
+                    className=""
+                    src="https://click2cart.com/assets/img/basket.svg?20240319T050807194229"
+                  />
                 </div>
               </div>
             </div>
