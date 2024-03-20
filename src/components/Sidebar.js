@@ -118,7 +118,7 @@ export default function Example(props) {
                           <div className="font-bold">TOTAL</div>
                           <div className="font-bold">$14.66</div>
                         </div>
-                        <div className="flex justify-center text-white py-4 px-8 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs">
+                        <div className="flex justify-center text-white py-4 px-8 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer text-base">
                           Send to Cart
                         </div>
                       </div>
