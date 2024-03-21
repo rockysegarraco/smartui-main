@@ -38,7 +38,7 @@ function App() {
           src="img/header-cnn.jpg"
         />
         <img
-          className="mb-1 mx-auto max-w-7xl pt-1 lg:px-0 px-4 lg:hidden block"
+          className="mb-1 mx-auto lg:max-w-7xl max-w-full pt-1 lg:px-0 px-4 lg:hidden block"
           src="img/header-cnn-mobile.jpg"
         />
       </div>
