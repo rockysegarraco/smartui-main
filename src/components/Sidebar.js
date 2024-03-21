@@ -52,9 +52,9 @@ export default function Example(props) {
                     </div>
                     <div className="relative mt-6 flex-1 px-4 sm:px-6">
                       <div className="mt-0">
-                        <div className="flex items-center justify-between py-2 px-4 bg-[#FF0C2C] mt-1 rounded-sm ">
+                        <div className="flex items-center justify-between py-2 px-4 bg-[#FF0C2C] mt-1">
                           <div className="font-bold text-[#FFE500]">
-                            3/$11{" "}
+                            3 for $11{" "}
                             <span className="text-sm font-normal text-[#FFE500]">
                               with Card
                             </span>
@@ -93,11 +93,11 @@ export default function Example(props) {
                         </div>
                       </div>
                       <div className="mt-0">
-                        <div className="flex items-center justify-between py-2 px-4 bg-[#FF0C2C] mt-1 rounded-sm ">
+                        <div className="flex items-center justify-between py-2 px-4 bg-[#FF0C2C] mt-1">
                           <div className="font-bold text-[#FFE500]">
                             Buy 1 Get 1 Free{" "}
                             <span className="text-sm font-normal text-[#FFE500]">
-                              of Equal or Lesser Value
+                              of Equal or Lesser Value with Card
                             </span>
                           </div>
                         </div>

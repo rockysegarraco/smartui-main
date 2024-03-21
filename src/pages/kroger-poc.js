@@ -32,24 +32,36 @@ function App() {
   return (
     <>
       <Sidebar isOpen={isOpen} closeModal={closeModal} />
-      <div className="relative mx-auto max-w-7xl bg-slate-300">
-        <div className="bg-[#0E52A1] py-6 px-6 sticky top-0 z-10">
+      <div className="relative mx-auto max-w-full bg-white shadow">
+        <img
+          className="mb-1 mx-auto max-w-7xl pt-1 lg:px-0 px-4 lg:block hidden"
+          src="img/header-cnn.jpg"
+        />
+        <img
+          className="mb-1 mx-auto max-w-7xl pt-1 lg:px-0 px-4 lg:hidden block"
+          src="img/header-cnn-mobile.jpg"
+        />
+      </div>
+      <div className="relative mx-auto max-w-7xl bg-[#0E52A1]">
+        <div className="bg-[#0E52A1] py-3 px-6 sticky top-0 z-10 mx-auto max-w-7xl">
           <div className="flex text-white items-center justify-between lg:gap-x-2 gap-x-4">
-            <div className="font-medium text-sm lg:text-2xl">
+            <div className="font-medium text-sm lg:text-xl">
               Choose your favorite products to save to your basket.
             </div>
             <div
-              className="flex justify-center text-white py-2 px-8 md:py-2 lg:py-4 lg:px-6 rounded-full text-center font-bold bg-white cursor-pointer lg:text-base text-xs"
+              className="flex justify-center text-white py-0 px-6 md:py-2 lg:py-3 lg:px-6 rounded-full text-center font-bold bg-white cursor-pointer lg:text-base text-xs"
               onClick={openModal}
             >
               <div className="flex items-center justify-center gap-x-4">
                 <div className="text-black text-base">
-                  <span className="hidden md:block lg:block">2 Items</span>
+                  <span className="hidden md:block lg:block font-normal">
+                    2 Items
+                  </span>
                   <span className="block md:hidden lg:hidden text-base">2</span>
                 </div>
                 <div>
                   <img
-                    className=""
+                    className="lg:h-6 h-10 md:h-6"
                     src="https://click2cart.com/assets/img/basket.svg?20240319T050807194229"
                   />
                 </div>
