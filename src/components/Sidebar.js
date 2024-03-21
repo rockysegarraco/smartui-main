@@ -29,7 +29,7 @@ export default function Example(props) {
                     <div className="px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-x-4">
-                          <div className="font-bold text-xl">Your Basket</div>
+                          <div className="font-medium text-xl">Your Basket</div>
                           <div>
                             <img
                               className="h-8"
@@ -97,7 +97,7 @@ export default function Example(props) {
                           <div className="font-bold text-[#FFE500]">
                             Buy 1 Get 1 Free{" "}
                             <span className="text-sm font-normal text-[#FFE500]">
-                              of Equal or Lesser Value with Card
+                              of Equal or Lesser Value
                             </span>
                           </div>
                         </div>
