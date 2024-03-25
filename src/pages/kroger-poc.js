@@ -42,13 +42,12 @@ function App() {
           src="img/header-cnn-mobile.jpg"
         />
       </div>
-      <div className="mx-auto max-w-7xl grid grid-cols-12 gap-4 mt-8">
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-4 mt-2 lg:mt-8">
         <div className="col-span-9">
           <iframe
             allowtransparency="true"
-            style={{ background: "red" }}
-            src="https://demo.smartcommerce.co/smartcommerce/forms/lead.html"
-            height="475"
+            src="https://smartui.vercel.app/kroger-frame"
+            height="1000"
             width="100%"
             frameBorder="0"
           ></iframe>
