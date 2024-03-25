@@ -74,12 +74,12 @@ function App() {
         <div>
           <img src="img/flyer_Page_01.jpg" />
         </div>
-        <div class="absolute top-[20%] left-[58%] lg:top-[15%]">
+        <div class="absolute top-[17%] left-[58%] lg:top-[15%]">
           <div
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[31%] left-[61%] lg:top-[26%]">
@@ -87,7 +87,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[34.5%] left-[23%] lg:top-[30.5%]">
@@ -95,7 +95,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[40.5%] left-[46%] lg:top-[37.5%]">
@@ -103,7 +103,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[41.75%] left-[82%] lg:top-[38.5%]">
@@ -111,7 +111,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[52%] left-[23%] lg:top-[50.5%]">
@@ -119,7 +119,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[52%] left-[53%] lg:top-[50.5%]">
@@ -127,7 +127,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[49.5%] left-[85%] lg:top-[47.5%]">
@@ -135,7 +135,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[63.5%] left-[28%] lg:top-[63.5%]">
@@ -143,7 +143,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[62%] left-[59%] lg:top-[62%]">
@@ -151,7 +151,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
         <div class="absolute top-[58%] left-[84%] lg:top-[56%]">
@@ -159,7 +159,7 @@ function App() {
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
           >
-            + <span className="hidden lg:block">Add</span>
+            + <span>Add</span>
           </div>
         </div>
       </div>
