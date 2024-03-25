@@ -74,7 +74,7 @@ function App() {
         <div>
           <img src="img/flyer_Page_01.jpg" />
         </div>
-        <div class="absolute top-[17%] left-[58%] lg:top-[15%]">
+        <div class="absolute top-[17%] left-[58%] lg:top-[13%]">
           <div
             className="flex justify-center text-white px-2 py-1 lg:py-2 lg:px-6 rounded-full text-center font-bold bg-[#1975CF]/95 cursor-pointer lg:text-base text-xs"
             onClick={openModal}
