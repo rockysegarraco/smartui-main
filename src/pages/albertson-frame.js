@@ -4,7 +4,7 @@ import PillsComplex from "@/components/Buttons/PillsComplex";
 import ButtonMap from "@/components/Buttons/ButtonMap";
 import Share from "@/components/Share";
 import LoadingScreen from "@/components/LoadingScreen";
-import Sidebar from "@/components/Sidebar";
+import SidebarTab from "@/components/SidebarTab";
 import { MapPinIcon } from "@heroicons/react/24/solid";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
   }
   return (
     <>
-      <Sidebar isOpen={isOpen} closeModal={closeModal} />
+      <SidebarTab isOpen={isOpen} closeModal={closeModal} />
       <div className="relative mx-auto bg-[#0E52A1]">
         <div className="bg-[#0E52A1] py-3 px-6 sticky top-0 z-10 ">
           <div className="flex text-white items-center justify-between lg:gap-x-2 gap-x-4">
