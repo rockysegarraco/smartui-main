@@ -24,7 +24,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -67,7 +67,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -108,7 +108,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -151,7 +151,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -192,7 +192,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -235,7 +235,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -276,7 +276,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
@@ -319,7 +319,7 @@ export default function Page() {
                   </div>
                   <div>
                     {/* CONTENT FLEX */}
-                    <div className="flex flex-col gap-4 mb-4">
+                    <div className="flex flex-col gap-2 mb-4">
                       <div>
                         <span className="font-bold">Amazon</span> <br /> $26, 12
                         oz (24 Pack)
