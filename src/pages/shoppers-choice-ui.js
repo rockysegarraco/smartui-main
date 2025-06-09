@@ -306,10 +306,7 @@ export default function CarouselPage() {
 
                       <div className="mx-auto max-w-lg mt-6 lg:mb-0 mb-24 grid grid-cols-1 sm:grid-cols-1 gap-2">
                         {/* Animate the text with fade-up effect */}
-                        <div
-                          className="text-center mb-2 fade-up opacity-0 translate-y-8"
-                          ref={(el) => (storeItemRefs.current[7] = el)} // Adding to refs with index after store items
-                        >
+                        <div className="text-center mb-4 text-gray-700 font-medium">
                           Choose your favorite store below
                         </div>
 
