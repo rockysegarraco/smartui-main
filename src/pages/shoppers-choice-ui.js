@@ -387,7 +387,7 @@ export default function CarouselPage() {
                           </div>
                         </div>
                       </div>
-                      <h2 className="text-3xl lg:text-5xl font-bold mt-6 text-[#252D6C]">
+                      <h2 className="lg:order-text-3xl lg:text-5xl font-bold mt-6 text-[#252D6C]">
                         Fruit is getting a little sparkle.
                       </h2>
                     </div>
