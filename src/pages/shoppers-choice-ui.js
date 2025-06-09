@@ -266,13 +266,13 @@ export default function CarouselPage() {
             <div className=" min-h-screen">
               {" "}
               {/* Dark overlay for better readability */}
-              <main className="p-0 sm:p-16 sm:pt-0 lg:pt-0 w-full">
-                <div className="mx-auto">
+              <main className="p-0 sm:p-0 sm:pt-0 lg:pt-0 w-full">
+                <div className="mx-auto max-w-7xl">
                   {/* Tabs - Full width on small screens, centered on larger screens */}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
                     {/* First Column */}
-                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-20 lg:pr-20 lg:pt-12 lg:pb-12 text-white">
+                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-16 lg:pr-16 lg:pt-12 lg:pb-12 text-white">
                       <h2 className="order-2 lg:order-1 text-3xl lg:text-4xl font-bold mb-6 text-[#252D6C]">
                         Fruit is getting a little sparkle.
                       </h2>
