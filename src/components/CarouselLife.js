@@ -32,6 +32,30 @@ const retailers = [
     price: "Orange Mango",
     logo: "/img/can-orange.png",
   },
+  {
+    id: 6,
+    name: "The quick brown fox jumps over the lazy dog",
+    price: "1:1 RatioImage",
+    logo: "/img/1-1.jpg",
+  },
+  {
+    id: 7,
+    name: "The quick brown fox jumps over the lazy dog",
+    price: "4:3 Ratio Image",
+    logo: "/img/4-3.jpg",
+  },
+  {
+    id: 7,
+    name: "The quick brown fox jumps over the lazy dog",
+    price: "16:9 Ratio Image",
+    logo: "/img/16-9.jpg",
+  },
+  {
+    id: 7,
+    name: "The quick brown fox jumps over the lazy dog",
+    price: "9:16 Ratio Image",
+    logo: "/img/9-16.jpg",
+  },
   // Add more retailers as needed
 ];
 
@@ -206,7 +230,7 @@ export default function PriceCarousel({ onCardClick }) {
                       <img
                         src={retailer.logo}
                         alt={`${retailer.name} logo`}
-                        className="h-16 w-16 sm:h-16 sm:w-16 object-contain"
+                        className="h-16 w-16 sm:h-24 sm:w-24 object-contain"
                       />
                     </div>
                     <div

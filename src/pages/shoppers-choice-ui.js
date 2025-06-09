@@ -55,6 +55,11 @@ export default function CarouselPage() {
       name: "PUBLIX",
       description: "$7.49",
     },
+    {
+      logo: "https://s3.us-west-2.amazonaws.com/retailerlogos.smartcommerce.co/img/supers/sc/us/small/sproutsfarmersmarketpoweredbyinstacart_usa_dark.svg",
+      name: "SPROUTS",
+      description: "$7.49",
+    },
   ]);
 
   // Add a function to shuffle the store data
@@ -214,66 +219,6 @@ export default function CarouselPage() {
           .fade-up {
             transition: opacity 0.6s ease, transform 0.6s ease;
           }
-          
-          /* Collapsible image styles - ONLY FOR MOBILE */
-          .collapsible-image-container {
-            overflow: hidden;
-            transition: height 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            position: relative;
-          }
-          
-          #image-toggle {
-            display: none;
-          }
-          
-          /* No collapsible behavior on desktop */
-          @media (min-width: 641px) {
-            .collapsible-image-container {
-              height: auto !important;
-            }
-            
-            .collapsible-image-container img {
-              transform: none !important;
-              opacity: 1 !important;
-            }
-            
-            .toggle-button-label {
-              display: none !important;
-            }
-          }
-          
-          /* Mobile-only collapsible behavior */
-          @media (max-width: 640px) {
-            /* Default state (collapsed on mobile) */
-            .collapsible-image-container {
-              height: 4rem !important;
-            }
-            
-            .collapsible-image-container img {
-              transform: scale(0.5);
-              opacity: 0.8;
-            }
-            
-            /* Expanded state when checkbox is checked */
-            #image-toggle:checked + .collapsible-wrapper .collapsible-image-container {
-              height: 16rem !important;
-            }
-            
-            #image-toggle:checked + .collapsible-wrapper .collapsible-image-container img {
-              transform: scale(1);
-              opacity: 1;
-            }
-            
-            /* Hide the collapse icon when not expanded */
-            #image-toggle:not(:checked) + .collapsible-wrapper .collapse-icon {
-              display: none;
-            }
-            
-            /* Hide the expand icon when expanded */
-            #image-toggle:checked + .collapsible-wrapper .expand-icon {
-              display: none;
-            }
-          }
         `}</style>
       </Head>
 
@@ -288,108 +233,62 @@ export default function CarouselPage() {
             className="min-h-screen bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: "url('/img/bg-fruit.jpg')" }}
           >
+            <div
+              className={`flex justify-center p-4 sm:px-0 ${
+                isScrolled
+                  ? "sticky top-0 z-40 bg-white/40 backdrop-blur-sm py-3"
+                  : ""
+              } transition-all duration-300`}
+            >
+              <div className="bg-white inline-flex rounded-full p-1 shadow-md w-full sm:w-auto">
+                <button
+                  onClick={() => setActiveTab("products")}
+                  className={`${
+                    activeTab === "products"
+                      ? "bg-[#4363F9] text-white"
+                      : "bg-white text-gray-500"
+                  } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
+                >
+                  Shop
+                </button>
+                <button
+                  onClick={() => setActiveTab("prices")}
+                  className={`${
+                    activeTab === "prices"
+                      ? "bg-[#4363F9] text-white"
+                      : "bg-white text-gray-500"
+                  } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
+                >
+                  Explore
+                </button>
+              </div>
+            </div>
             <div className=" min-h-screen">
               {" "}
               {/* Dark overlay for better readability */}
               <main className="p-0 sm:p-16 sm:pt-0 lg:pt-0 w-full">
                 <div className="mx-auto">
                   {/* Tabs - Full width on small screens, centered on larger screens */}
-                  <div
-                    className={`flex justify-center p-4 sm:px-0 ${
-                      isScrolled
-                        ? "sticky top-0 z-40 bg-white/40 backdrop-blur-sm py-3"
-                        : ""
-                    } transition-all duration-300`}
-                  >
-                    <div className="bg-white inline-flex rounded-full p-1 shadow-md w-full sm:w-auto">
-                      <button
-                        onClick={() => setActiveTab("products")}
-                        className={`${
-                          activeTab === "products"
-                            ? "bg-[#4363F9] text-white"
-                            : "bg-white text-gray-500"
-                        } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
-                      >
-                        Shop
-                      </button>
-                      <button
-                        onClick={() => setActiveTab("prices")}
-                        className={`${
-                          activeTab === "prices"
-                            ? "bg-[#4363F9] text-white"
-                            : "bg-white text-gray-500"
-                        } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
-                      >
-                        Explore
-                      </button>
-                    </div>
-                  </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
                     {/* First Column */}
-                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-12 lg:pr-12 lg:pt-12 lg:pb-12 text-white">
-                      <div className="items-center relative">
-                        {/* Hidden checkbox for toggle state */}
-                        <input type="checkbox" id="image-toggle" />
-
-                        {/* Wrapper div that contains the image container */}
-                        <div className="collapsible-wrapper">
-                          {/* Image container */}
-                          <div
-                            ref={imageRef}
-                            className="collapsible-image-container w-full bg-transparent shadow-none sm:bg-white sm:shadow flex items-center justify-center mr-4 fade-up opacity-0 translate-y-8 h-96 sm:h-96 rounded-md"
-                          >
-                            <img
-                              src="/img/16-hero.png"
-                              alt="Product"
-                              className="max-w-full object-contain max-h-full transition-all duration-300"
-                            />
-
-                            {/* Toggle button/icon in the top right */}
-                            <label
-                              htmlFor="image-toggle"
-                              className="toggle-button-label absolute top-3 right-1 bg-white/90 rounded-full p-2 shadow-lg cursor-pointer z-10 hover:bg-gray-100"
-                            >
-                              {/* Expand icon - visible when collapsed (default state) */}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 text-gray-800 expand-icon"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={1.5}
-                              >
-                                {/* Simple arrows pointing outward */}
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
-                                />
-                              </svg>
-
-                              {/* Collapse icon - visible when expanded */}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 text-gray-800 collapse-icon"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={1.5}
-                              >
-                                {/* Simple arrows pointing inward */}
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M9 9V4.5M9 9H4.5M15 9H19.5M15 9V4.5M15 14.25V19.5M15 14.25H19.5M9 14.25H4.5M9 14.25V19.5"
-                                />
-                              </svg>
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-                      <h2 className="lg:order-text-3xl lg:text-5xl font-bold mt-6 text-[#252D6C]">
+                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-20 lg:pr-20 lg:pt-12 lg:pb-12 text-white">
+                      <h2 className="order-2 lg:order-1 text-3xl lg:text-4xl font-bold mb-6 text-[#252D6C]">
                         Fruit is getting a little sparkle.
                       </h2>
+                      <div className="order-1 lg:order-2 items-center relative">
+                        {/* Simplified image container without collapsible functionality */}
+                        <div
+                          ref={imageRef}
+                          className="w-full bg-transparent flex items-center justify-center fade-up opacity-0 translate-y-8 rounded-md"
+                        >
+                          <img
+                            src="/img/1-1.jpg"
+                            alt="Product"
+                            className="max-w-full object-contain max-h-full"
+                          />
+                        </div>
+                      </div>
                     </div>
 
                     {/* Second Column */}
