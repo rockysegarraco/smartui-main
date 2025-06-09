@@ -60,6 +60,11 @@ export default function CarouselPage() {
       name: "SPROUTS",
       description: "$7.49",
     },
+    {
+      logo: "https://s3.us-west-2.amazonaws.com/retailerlogos.smartcommerce.co/img/supers/sc/us/small/samsclub_usa_light.svg",
+      name: "SAMS",
+      description: "$17.49",
+    },
   ]);
 
   // Add a function to shuffle the store data
@@ -87,7 +92,6 @@ export default function CarouselPage() {
       setIsLoading(false);
 
       // Immediately run checkVisibility to show all elements
-      // Add a short delay to ensure DOM is ready after isLoading state change
       setTimeout(() => {
         // Force all elements to be visible regardless of viewport position
         const forceVisible = (element, delay = 0) => {
@@ -103,11 +107,24 @@ export default function CarouselPage() {
         forceVisible(carouselRef.current, 100);
 
         // Force visibility on store items with staggered delay
+        // Add console logs to debug
+        console.log("Total store items: ", storeData.length);
+        console.log("Refs length: ", storeItemRefs.current.length);
+
         storeItemRefs.current.forEach((item, index) => {
           if (item) {
+            console.log("Animating item:", index);
             forceVisible(item, 150 + index * 75);
+          } else {
+            console.log("Missing ref for item:", index);
           }
         });
+
+        // Force visibility on the Find Near Me button separately
+        const findNearMeButton = document.querySelector(".find-near-me-button");
+        if (findNearMeButton) {
+          forceVisible(findNearMeButton, 150 + storeData.length * 75);
+        }
       }, 50);
     }, 2000); // 2 second loading screen
 
@@ -267,7 +284,7 @@ export default function CarouselPage() {
               {" "}
               {/* Dark overlay for better readability */}
               <main className="p-0 sm:p-0 sm:pt-0 lg:pt-0 w-full">
-                <div className="mx-auto max-w-7xl">
+                <div className="mx-auto max-w-7xl mb-16">
                   {/* Tabs - Full width on small screens, centered on larger screens */}
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
@@ -360,8 +377,8 @@ export default function CarouselPage() {
                         ))}
                         {/* Find Near Me Button - with animation */}
                         <button
-                          className="flex items-center justify-center gap-x-2 bg-[#4363F9] text-white py-3 px-4 rounded-full w-full mb-3 hover:bg-[#3a56de] transition-colors fade-up opacity-0 translate-y-8 mt-2"
-                          ref={(el) => (storeItemRefs.current[8] = el)} // Adding to refs with index after store items and text
+                          className="flex items-center justify-center gap-x-2 bg-[#4363F9] text-white py-3 px-4 rounded-full w-full mb-3 hover:bg-[#3a56de] transition-colors fade-up opacity-0 translate-y-8 mt-2 find-near-me-button"
+                          ref={(el) => (storeItemRefs.current[9] = el)} // Change from index 8 to 9
                         >
                           {/* Map/Directions Icon */}
                           <svg
