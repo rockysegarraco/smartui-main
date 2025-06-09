@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -8,6 +9,9 @@ import WidgetMap from "@/components/Widgets/WidgetMap";
 export default function Example() {
   return (
     <div className="bg-[#1E3932] lg:h-screen">
+      <Head>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <div className="relative isolate pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 mx-auto max-w-full px-6 py-8 sm:py-32 lg:gap-x-10 lg:px-24 lg:py-20">
           <div className="col-span-1 lg:col-span-8 xl:col-span-7 lg:mx-0 lg:flex-auto order-2 lg:order-1">
