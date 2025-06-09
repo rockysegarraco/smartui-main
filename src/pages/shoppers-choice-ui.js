@@ -283,7 +283,7 @@ export default function CarouselPage() {
             <div className=" min-h-screen">
               {" "}
               {/* Dark overlay for better readability */}
-              <main className="p-0 sm:p-0 sm:pt-0 lg:pt-0 w-full">
+              <main className="p-0 sm:p-0 sm:pt-0 lg:pt-0 lg:pb-8 w-full">
                 <div className="mx-auto max-w-7xl mb-16">
                   {/* Tabs - Full width on small screens, centered on larger screens */}
 
