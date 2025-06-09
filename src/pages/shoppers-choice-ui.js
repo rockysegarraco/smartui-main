@@ -1,14 +1,16 @@
+import LoadingScreen from "@/components/LoadingScreen";
 import Head from "next/head";
 import PriceCarousel from "@/components/CarouselLife";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect, useRef } from "react";
 
 export default function CarouselPage() {
+  // Add loading state
+  const [isLoading, setIsLoading] = useState(true);
+
   const [activeTab, setActiveTab] = useState("products");
   const [isScrolled, setIsScrolled] = useState(false);
-  // Add this state to track when to make the carousel sticky
   const [isCarouselSticky, setIsCarouselSticky] = useState(false);
-  // Add the hoveredStoreIndex state if it doesn't exist
   const [hoveredStoreIndex, setHoveredStoreIndex] = useState(null);
 
   // Refs for elements we want to animate
@@ -72,6 +74,38 @@ export default function CarouselPage() {
 
   // Add scroll event listener to track when to apply sticky positioning
   useEffect(() => {
+    // Show loading screen initially
+    setIsLoading(true);
+
+    // Hide loading screen after content is ready
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+
+      // Immediately run checkVisibility to show all elements
+      // Add a short delay to ensure DOM is ready after isLoading state change
+      setTimeout(() => {
+        // Force all elements to be visible regardless of viewport position
+        const forceVisible = (element, delay = 0) => {
+          if (!element) return;
+          setTimeout(() => {
+            element.classList.add("opacity-100", "translate-y-0");
+            element.classList.remove("opacity-0", "translate-y-8");
+          }, delay);
+        };
+
+        // Force visibility on all elements with staggered timing
+        forceVisible(imageRef.current, 0);
+        forceVisible(carouselRef.current, 100);
+
+        // Force visibility on store items with staggered delay
+        storeItemRefs.current.forEach((item, index) => {
+          if (item) {
+            forceVisible(item, 150 + index * 75);
+          }
+        });
+      }, 50);
+    }, 2000); // 2 second loading screen
+
     const handleScroll = () => {
       // Check for the main tabs sticky state
       setIsScrolled(window.scrollY > 10);
@@ -106,6 +140,7 @@ export default function CarouselPage() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer); // Clean up the timer
     };
   }, []);
 
@@ -242,255 +277,260 @@ export default function CarouselPage() {
         `}</style>
       </Head>
 
-      {/* Main content wrapper with padding for the fixed footer */}
-      <div className="lg:pb-0 pb-2">
-        {/* Main content area - will be scrollable */}
-        <div
-          className="min-h-screen bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/img/bg-fruit.jpg')" }}
-        >
-          <div className=" min-h-screen">
-            {" "}
-            {/* Dark overlay for better readability */}
-            <main className="p-0 sm:p-16 sm:pt-0 lg:pt-0 w-full">
-              <div className="mx-auto">
-                {/* Tabs - Full width on small screens, centered on larger screens */}
-                <div
-                  className={`flex justify-center p-4 sm:px-0 ${
-                    isScrolled
-                      ? "sticky top-0 z-40 bg-white/40 backdrop-blur-sm py-3"
-                      : ""
-                  } transition-all duration-300`}
-                >
-                  <div className="bg-white inline-flex rounded-full p-1 shadow-md w-full sm:w-auto">
-                    <button
-                      onClick={() => setActiveTab("products")}
-                      className={`${
-                        activeTab === "products"
-                          ? "bg-[#4363F9] text-white"
-                          : "bg-white text-gray-500"
-                      } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
-                    >
-                      Shop
-                    </button>
-                    <button
-                      onClick={() => setActiveTab("prices")}
-                      className={`${
-                        activeTab === "prices"
-                          ? "bg-[#4363F9] text-white"
-                          : "bg-white text-gray-500"
-                      } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
-                    >
-                      Explore
-                    </button>
-                  </div>
-                </div>
+      {/* Add the LoadingScreen component */}
+      {isLoading && <LoadingScreen />}
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
-                  {/* First Column */}
-                  <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-12 lg:pr-12 lg:pt-12 lg:pb-12 text-white">
-                    <div className="items-center relative">
-                      {/* Hidden checkbox for toggle state */}
-                      <input type="checkbox" id="image-toggle" />
-
-                      {/* Wrapper div that contains the image container */}
-                      <div className="collapsible-wrapper">
-                        {/* Image container */}
-                        <div
-                          ref={imageRef}
-                          className="collapsible-image-container w-full bg-transparent shadow-none sm:bg-white sm:shadow flex items-center justify-center mr-4 fade-up opacity-0 translate-y-8 h-96 sm:h-96 rounded-md"
-                        >
-                          <img
-                            src="/img/16-hero.png"
-                            alt="Product"
-                            className="max-w-full object-contain max-h-full transition-all duration-300"
-                          />
-
-                          {/* Toggle button/icon in the top right */}
-                          <label
-                            htmlFor="image-toggle"
-                            className="toggle-button-label absolute top-3 right-1 bg-white/90 rounded-full p-2 shadow-lg cursor-pointer z-10 hover:bg-gray-100"
-                          >
-                            {/* Expand icon - visible when collapsed (default state) */}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5 text-gray-800 expand-icon"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={1.5}
-                            >
-                              {/* Simple arrows pointing outward */}
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
-                              />
-                            </svg>
-
-                            {/* Collapse icon - visible when expanded */}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-5 w-5 text-gray-800 collapse-icon"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={1.5}
-                            >
-                              {/* Simple arrows pointing inward */}
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M9 9V4.5M9 9H4.5M15 9H19.5M15 9V4.5M15 14.25V19.5M15 14.25H19.5M9 14.25H4.5M9 14.25V19.5"
-                              />
-                            </svg>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <h2 className="text-3xl lg:text-5xl font-bold mt-6 text-[#252D6C]">
-                      Fruit is getting a little sparkle.
-                    </h2>
-                  </div>
-
-                  {/* Second Column */}
-                  <div className="pl-8 pr-8 pt-8 pb-8 sm:pl-8 sm:pr-8 sm:pt-12 sm:pb-8">
-                    <div
-                      ref={carouselRef}
-                      className={`fade-up opacity-0 translate-y-8 ${
-                        isCarouselSticky
-                          ? "sticky top-[60px] z-30 bg-white/40 backdrop-blur-sm pt-4 pb-4 px-8 -mx-8 shadow-sm"
-                          : ""
-                      } transition-all duration-300`}
-                    >
-                      <PriceCarousel onCardClick={shuffleStoreData} />
-                    </div>
-
-                    <div className="mx-auto max-w-lg mt-6 lg:mb-0 mb-24 grid grid-cols-1 sm:grid-cols-1 gap-2">
-                      {/* Animate the text with fade-up effect */}
-                      <div
-                        className="text-center mb-2 fade-up opacity-0 translate-y-8"
-                        ref={(el) => (storeItemRefs.current[7] = el)} // Adding to refs with index after store items
-                      >
-                        Choose your favorite store below
-                      </div>
-
-                      {/* Update the store item div to be clickable with hover effect */}
-                      {storeData.map((store, index) => (
-                        <div
-                          key={index}
-                          ref={(el) => (storeItemRefs.current[index] = el)}
-                          className="flex gap-x-4 bg-white border border-gray-200 pl-2 pr-6 py-2 rounded-full items-center fade-up opacity-0 translate-y-8 cursor-pointer transition-all hover:border-2 hover:border-[#4363F9] hover:shadow-md"
-                          onClick={() =>
-                            window.open(store.url || "#", "_blank")
-                          }
-                          onMouseEnter={() => setHoveredStoreIndex(index)}
-                          onMouseLeave={() => setHoveredStoreIndex(null)}
-                          role="button"
-                          tabIndex={0}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter" || e.key === " ") {
-                              window.open(store.url || "#", "_blank");
-                            }
-                          }}
-                        >
-                          <div className="flex-none">
-                            <img
-                              src={store.logo}
-                              alt={store.name}
-                              className="h-16 w-16 object-contain"
-                            />
-                          </div>
-                          <div className="flex-grow uppercase">
-                            <div className="uppercase font-bold">
-                              {store.name}
-                            </div>
-                            <div className="text-xs mt-1">
-                              <span className="bg-yellow-400 p-1 uppercase text-xs sm:text-sm font-bold">
-                                {store.description}
-                              </span>{" "}
-                              16 FL OZ BOTTLE 6 PACK
-                            </div>
-                          </div>
-                          <div className="flex-none">
-                            <ChevronRightIcon
-                              className={`h-6 w-6 transition-colors ${
-                                hoveredStoreIndex === index
-                                  ? "text-[#4363F9]"
-                                  : "text-gray-400"
-                              }`}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                      {/* Find Near Me Button - with animation */}
+      {/* Only render the rest when not loading */}
+      {!isLoading && (
+        <div className="lg:pb-0 pb-2">
+          {/* Main content area - will be scrollable */}
+          <div
+            className="min-h-screen bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/img/bg-fruit.jpg')" }}
+          >
+            <div className=" min-h-screen">
+              {" "}
+              {/* Dark overlay for better readability */}
+              <main className="p-0 sm:p-16 sm:pt-0 lg:pt-0 w-full">
+                <div className="mx-auto">
+                  {/* Tabs - Full width on small screens, centered on larger screens */}
+                  <div
+                    className={`flex justify-center p-4 sm:px-0 ${
+                      isScrolled
+                        ? "sticky top-0 z-40 bg-white/40 backdrop-blur-sm py-3"
+                        : ""
+                    } transition-all duration-300`}
+                  >
+                    <div className="bg-white inline-flex rounded-full p-1 shadow-md w-full sm:w-auto">
                       <button
-                        className="flex items-center justify-center gap-x-2 bg-[#4363F9] text-white py-3 px-4 rounded-full w-full mb-3 hover:bg-[#3a56de] transition-colors fade-up opacity-0 translate-y-8 mt-2"
-                        ref={(el) => (storeItemRefs.current[8] = el)} // Adding to refs with index after store items and text
+                        onClick={() => setActiveTab("products")}
+                        className={`${
+                          activeTab === "products"
+                            ? "bg-[#4363F9] text-white"
+                            : "bg-white text-gray-500"
+                        } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
                       >
-                        {/* Map/Directions Icon */}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
-                          />
-                        </svg>
-                        <span className="font-medium">Find Near Me</span>
+                        Shop
+                      </button>
+                      <button
+                        onClick={() => setActiveTab("prices")}
+                        className={`${
+                          activeTab === "prices"
+                            ? "bg-[#4363F9] text-white"
+                            : "bg-white text-gray-500"
+                        } rounded-full px-6 py-2 text-sm font-medium transition-all flex-1 sm:flex-initial`}
+                      >
+                        Explore
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            </main>
-          </div>
 
-          {/* Fixed Footer */}
-          <footer className="fixed bottom-0 left-0 right-0 bg-white lg:bg-white/90 text-[#4363F9] z-50">
-            <div className="px-8 lg:px-16 py-4 justify-between flex items-center">
-              <div className="flex flex-row justify-between items-center">
-                {/* Location - Left aligned */}
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5 mr-1"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                    />
-                  </svg>
-                  <p className="text-lg text-[#4363F9]">32724</p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
+                    {/* First Column */}
+                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-12 lg:pr-12 lg:pt-12 lg:pb-12 text-white">
+                      <div className="items-center relative">
+                        {/* Hidden checkbox for toggle state */}
+                        <input type="checkbox" id="image-toggle" />
+
+                        {/* Wrapper div that contains the image container */}
+                        <div className="collapsible-wrapper">
+                          {/* Image container */}
+                          <div
+                            ref={imageRef}
+                            className="collapsible-image-container w-full bg-transparent shadow-none sm:bg-white sm:shadow flex items-center justify-center mr-4 fade-up opacity-0 translate-y-8 h-96 sm:h-96 rounded-md"
+                          >
+                            <img
+                              src="/img/16-hero.png"
+                              alt="Product"
+                              className="max-w-full object-contain max-h-full transition-all duration-300"
+                            />
+
+                            {/* Toggle button/icon in the top right */}
+                            <label
+                              htmlFor="image-toggle"
+                              className="toggle-button-label absolute top-3 right-1 bg-white/90 rounded-full p-2 shadow-lg cursor-pointer z-10 hover:bg-gray-100"
+                            >
+                              {/* Expand icon - visible when collapsed (default state) */}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-gray-800 expand-icon"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={1.5}
+                              >
+                                {/* Simple arrows pointing outward */}
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
+                                />
+                              </svg>
+
+                              {/* Collapse icon - visible when expanded */}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-gray-800 collapse-icon"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={1.5}
+                              >
+                                {/* Simple arrows pointing inward */}
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M9 9V4.5M9 9H4.5M15 9H19.5M15 9V4.5M15 14.25V19.5M15 14.25H19.5M9 14.25H4.5M9 14.25V19.5"
+                                />
+                              </svg>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <h2 className="text-3xl lg:text-5xl font-bold mt-6 text-[#252D6C]">
+                        Fruit is getting a little sparkle.
+                      </h2>
+                    </div>
+
+                    {/* Second Column */}
+                    <div className="pl-8 pr-8 pt-8 pb-8 sm:pl-8 sm:pr-8 sm:pt-12 sm:pb-8">
+                      <div
+                        ref={carouselRef}
+                        className={`fade-up opacity-0 translate-y-8 ${
+                          isCarouselSticky
+                            ? "sticky top-[60px] z-30 bg-white/40 backdrop-blur-sm pt-4 pb-4 px-8 -mx-8 shadow-sm"
+                            : ""
+                        } transition-all duration-300`}
+                      >
+                        <PriceCarousel onCardClick={shuffleStoreData} />
+                      </div>
+
+                      <div className="mx-auto max-w-lg mt-6 lg:mb-0 mb-24 grid grid-cols-1 sm:grid-cols-1 gap-2">
+                        {/* Animate the text with fade-up effect */}
+                        <div
+                          className="text-center mb-2 fade-up opacity-0 translate-y-8"
+                          ref={(el) => (storeItemRefs.current[7] = el)} // Adding to refs with index after store items
+                        >
+                          Choose your favorite store below
+                        </div>
+
+                        {/* Update the store item div to be clickable with hover effect */}
+                        {storeData.map((store, index) => (
+                          <div
+                            key={index}
+                            ref={(el) => (storeItemRefs.current[index] = el)}
+                            className="flex gap-x-4 bg-white border border-gray-200 pl-2 pr-6 py-2 rounded-full items-center fade-up opacity-0 translate-y-8 cursor-pointer transition-all hover:border-2 hover:border-[#4363F9] hover:shadow-md"
+                            onClick={() =>
+                              window.open(store.url || "#", "_blank")
+                            }
+                            onMouseEnter={() => setHoveredStoreIndex(index)}
+                            onMouseLeave={() => setHoveredStoreIndex(null)}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                window.open(store.url || "#", "_blank");
+                              }
+                            }}
+                          >
+                            <div className="flex-none">
+                              <img
+                                src={store.logo}
+                                alt={store.name}
+                                className="h-16 w-16 object-contain"
+                              />
+                            </div>
+                            <div className="flex-grow uppercase">
+                              <div className="uppercase font-bold">
+                                {store.name}
+                              </div>
+                              <div className="text-xs mt-1">
+                                <span className="bg-yellow-400 p-1 uppercase text-xs sm:text-sm font-bold">
+                                  {store.description}
+                                </span>{" "}
+                                16 FL OZ BOTTLE 6 PACK
+                              </div>
+                            </div>
+                            <div className="flex-none">
+                              <ChevronRightIcon
+                                className={`h-6 w-6 transition-colors ${
+                                  hoveredStoreIndex === index
+                                    ? "text-[#4363F9]"
+                                    : "text-gray-400"
+                                }`}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                        {/* Find Near Me Button - with animation */}
+                        <button
+                          className="flex items-center justify-center gap-x-2 bg-[#4363F9] text-white py-3 px-4 rounded-full w-full mb-3 hover:bg-[#3a56de] transition-colors fade-up opacity-0 translate-y-8 mt-2"
+                          ref={(el) => (storeItemRefs.current[8] = el)} // Adding to refs with index after store items and text
+                        >
+                          {/* Map/Directions Icon */}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+                            />
+                          </svg>
+                          <span className="font-medium">Find Near Me</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+
+            {/* Fixed Footer */}
+            <footer className="fixed bottom-0 left-0 right-0 bg-white lg:bg-white/90 text-[#4363F9] z-50">
+              <div className="px-8 lg:px-16 py-4 justify-between flex items-center">
+                <div className="flex flex-row justify-between items-center">
+                  {/* Location - Left aligned */}
+                  <div className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5 mr-1"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                      />
+                    </svg>
+                    <p className="text-lg text-[#4363F9]">32724</p>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/img/c2c-logo-dark.svg"
+                    alt="Logo"
+                    className="lg:h-6 h-4"
+                  />
                 </div>
               </div>
-              <div>
-                <img
-                  src="/img/c2c-logo-dark.svg"
-                  alt="Logo"
-                  className="lg:h-6 h-4"
-                />
-              </div>
-            </div>
-          </footer>
+            </footer>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
