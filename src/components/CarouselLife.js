@@ -45,13 +45,13 @@ const retailers = [
     logo: "/img/4-3.jpg",
   },
   {
-    id: 7,
+    id: 8,
     name: "The quick brown fox jumps over the lazy dog",
     price: "16:9 Ratio Image",
     logo: "/img/16-9.jpg",
   },
   {
-    id: 7,
+    id: 9,
     name: "The quick brown fox jumps over the lazy dog",
     price: "9:16 Ratio Image",
     logo: "/img/9-16.jpg",
