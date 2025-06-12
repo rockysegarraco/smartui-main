@@ -7,7 +7,6 @@ import { useState, useEffect, useRef } from "react";
 export default function CarouselPage() {
   // Add loading state
   const [isLoading, setIsLoading] = useState(true);
-
   const [activeTab, setActiveTab] = useState("products");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCarouselSticky, setIsCarouselSticky] = useState(false);
@@ -289,7 +288,7 @@ export default function CarouselPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-0 bg-white/40 rounded-2xl shadow-lg">
                     {/* First Column */}
-                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-16 lg:pr-16 lg:pt-12 lg:pb-12 text-white">
+                    <div className="pl-8 pr-8 pt-8 pb-0 sm:pl-12 sm:pr-12 sm:pt-12 sm:pb-0 lg:pl-16 lg:pr-16 lg:pt-12 lg:pb-12   text-white">
                       <h2 className="order-2 lg:order-1 text-3xl lg:text-4xl font-bold mb-6 text-[#252D6C]">
                         Fruit is getting a little sparkle.
                       </h2>
