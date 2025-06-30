@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const FeatureSlider = () => {
-  const [expandedFeature, setExpandedFeature] = useState(null);
+  const [expandedFeature, setExpandedFeature] = useState(0);
 
   const content = {
     features: [
