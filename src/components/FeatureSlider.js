@@ -53,7 +53,7 @@ const FeatureSlider = () => {
         {/* Content Container */}
         <div className="relative z-10">
           {/* Header */}
-          <h1 className="text-3xl lg:text-6xl text-center text-white mb-8 lg:mb-16">
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-white mb-8 lg:mb-16">
             Our Data Engine Powers
           </h1>
 
