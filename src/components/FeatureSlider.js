@@ -100,7 +100,7 @@ const FeatureAccordion = ({ feature, index, isExpanded, onToggle }) => {
       <div
         className={`
           relative rounded-xl overflow-hidden transition-all duration-500 ease-out
-          ${isExpanded ? "bg-transparent px-16 py-12" : ""}
+          ${isExpanded ? "bg-transparent px-8 lg:px-16 py-12" : ""}
         `}
       >
         {/* Accordion Button */}
