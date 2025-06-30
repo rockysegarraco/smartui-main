@@ -6,6 +6,11 @@ const FeatureSlider = () => {
   const content = {
     features: [
       {
+        name: "Centralized Product Information",
+        description:
+          "Skip complex PIM integrations and endless spreadsheets. We manage your product data for you, keeping everything current and synchronized so your ads just work.",
+      },
+      {
         name: "SmartSubstitution™",
         description:
           "Automatically replace out-of-stock products with similar alternatives to maintain campaign performance.",
@@ -16,9 +21,9 @@ const FeatureSlider = () => {
           "Consolidate all your product information from multiple sources into a single, reliable database.",
       },
       {
-        name: "Centralized Product Information",
+        name: "Unmatched Scale",
         description:
-          "Skip complex PIM integrations and endless spreadsheets. We manage your product data for you, keeping everything current and synchronized so your ads just work.",
+          "Effortlessly manage and scale your product data across multiple channels without the usual headaches.",
       },
     ],
   };
@@ -28,84 +33,117 @@ const FeatureSlider = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Content Container */}
-      <div className="relative mx-auto max-w-2xl py-24 z-10 h-full flex flex-col justify-center">
-        {/* Feature List - Accordion Style */}
-        <div className="space-y-1">
-          {content.features.map((feature, index) => (
-            <div key={index} className="relative">
-              {/* Conditional Gradient Border - only show when expanded */}
-              {expandedFeature === index && (
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-orange-400 rounded-2xl p-[4px] transition-all duration-500 ease-out">
-                  <div className="w-full h-full bg-gray-800 rounded-xl"></div>
-                </div>
-              )}
+    <>
+      {/* Font import */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
 
-              {/* Accordion Content */}
-              <div
-                className={`relative rounded-xl overflow-hidden transition-all duration-500 ease-out ${
-                  expandedFeature === index ? "bg-gray-700/30 px-16 py-12" : ""
-                }`}
-              >
-                <button
-                  onClick={() => toggleFeature(index)}
-                  className={`w-full flex items-center text-white/80 transition-all duration-500 ease-out text-left ${
-                    expandedFeature === index ? "px-0 pt-0" : "p-4"
-                  }`}
-                >
-                  {/* Bullet - only show when NOT expanded */}
-                  <div
-                    className={`mr-2 flex-shrink-0 transition-all duration-500 ease-out ${
-                      expandedFeature === index
-                        ? "w-0 opacity-0 scale-0"
-                        : "w-3 opacity-100 scale-100"
-                    }`}
-                  >
-                    <div className="w-3 h-3 rounded-full bg-orange-400 transition-all duration-500 ease-out"></div>
+      <div
+        className="relative w-full overflow-hidden pt-24 pb-0 px-8"
+        style={{ fontFamily: "Poppins, sans-serif" }}
+      >
+        {/* Content Container */}
+        <h1 className="relative text-7xl text-center text-white z-20 mb-16">
+          Our Data Engine Powers{" "}
+        </h1>
+        <div className="relative mx-auto max-w-3xl z-10 h-full flex flex-col justify-center items-center ">
+          {/* Feature List - Accordion Style */}
+          <div className="space-y-2">
+            {content.features.map((feature, index) => (
+              <div key={index} className="relative">
+                {/* Conditional Gradient Border - only show when expanded */}
+                {expandedFeature === index && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-orange-400 rounded-2xl p-[4px] transition-all duration-500 ease-out">
+                    <div className="w-full h-full bg-[#1C2358] rounded-xl"></div>
                   </div>
+                )}
 
-                  {/* Title - bigger when expanded */}
-                  <span
-                    className={`font-medium flex-grow transition-all duration-500 ease-out ${
-                      expandedFeature === index
-                        ? "text-xl lg:text-5xl text-white transform scale-100"
-                        : "text-xl lg:text-4xl transform scale-100"
-                    }`}
-                  >
-                    {feature.name}
-                  </span>
-                </button>
-
-                {/* Expandable Content */}
+                {/* Accordion Content */}
                 <div
-                  className={`overflow-hidden transition-all duration-500 ease-out ${
+                  className={`relative rounded-xl overflow-hidden transition-all duration-500 ease-out ${
                     expandedFeature === index
-                      ? "max-h-48 opacity-100"
-                      : "max-h-0 opacity-0"
+                      ? "bg-transparent px-16 py-12"
+                      : ""
                   }`}
                 >
-                  <div
-                    className={`transition-all duration-500 ease-out ${
-                      expandedFeature === index ? "px-2 pt-4 pb-2" : "px-0 pb-0"
+                  <button
+                    onClick={() => toggleFeature(index)}
+                    className={`w-full flex items-center text-white/80 transition-all duration-500 ease-out text-left ${
+                      expandedFeature === index ? "px-0 pt-0" : "p-4"
                     }`}
                   >
-                    <p className="text-white/70 text-lg leading-relaxed transition-all duration-500 ease-out">
-                      {feature.description}
-                    </p>
+                    {/* SVG Icon - only show when NOT expanded */}
+                    <div
+                      className={`mr-3 flex-shrink-0 transition-all duration-500 ease-out ${
+                        expandedFeature === index
+                          ? "w-0 opacity-0 scale-0"
+                          : "w-6 opacity-100 scale-100"
+                      }`}
+                    >
+                      <img
+                        src="new/new-ellipse.svg"
+                        alt="Bullet"
+                        className="w-8 h-8 transition-all duration-500 ease-out"
+                      />
+                    </div>
+
+                    {/* Title - bigger when expanded */}
+                    <span
+                      className={`font-medium flex-grow transition-all duration-500 ease-out ${
+                        expandedFeature === index
+                          ? "text-xl lg:text-5xl text-white transform scale-100"
+                          : "text-xl lg:text-4xl text-white/50 transform scale-100"
+                      }`}
+                    >
+                      {feature.name}
+                    </span>
+                  </button>
+
+                  {/* Expandable Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-out ${
+                      expandedFeature === index
+                        ? "max-h-48 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div
+                      className={`transition-all duration-500 ease-out ${
+                        expandedFeature === index
+                          ? "px-2 pt-4 pb-2"
+                          : "px-0 pb-0"
+                      }`}
+                    >
+                      <p className="text-white/100 text-lg leading-relaxed transition-all duration-500 ease-out">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <img
+            src="/new/smart-39277.png"
+            alt="Smart 2025"
+            className="mt-24 w-full max-w-xl rounded-lg shadow-lg"
+          />
+        </div>
+
+        {/* Main Container Border - keeping this */}
+        <div className="absolute inset-0 opacity-100">
+          <div className="w-full h-full bg-[#1C2358]"></div>
         </div>
       </div>
-
-      {/* Main Container Border - keeping this */}
-      <div className="absolute inset-0 opacity-100">
-        <div className="w-full h-full bg-gray-800"></div>
-      </div>
-    </div>
+    </>
   );
 };
 
