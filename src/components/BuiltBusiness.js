@@ -31,18 +31,18 @@ export default function BuiltBusiness() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
-            <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h2 className="text-3xl md:text-6xl font-bold text-center text-white mb-8 lg:mb-8">
               Built for Your Business
             </h2>
             <p className="mt-4 text-lg/8 text-gray-300">
               Lorem ipsum dolor sit amet consect adipisicing possimus.
             </p>
           </div>
-          <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl sm:grid-cols-1 lg:grid-cols-3">
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className={`group relative flex flex-col ${stat.bgColor} p-8 transition-all duration-500 ease-out hover:bg-transparent overflow-hidden cursor-pointer h-[500px]`}
+                className={`group relative flex flex-col ${stat.bgColor} p-8 transition-all duration-500 ease-out hover:bg-transparent overflow-hidden cursor-pointer h-[300px] lg:h-[500px]`}
               >
                 {/* Background image - only visible on hover */}
                 <div
