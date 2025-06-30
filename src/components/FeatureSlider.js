@@ -51,12 +51,12 @@ const FeatureSlider = () => {
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         {/* Content Container */}
-        <h1 className="relative text-7xl text-center text-white z-20 mb-16">
+        <h1 className="relative text-3xl lg:text-7xl text-center text-white z-20 lg:mb-16 mb-8">
           Our Data Engine Powers{" "}
         </h1>
         <div className="relative mx-auto max-w-3xl z-10 h-full flex flex-col justify-center items-center ">
           {/* Feature List - Accordion Style */}
-          <div className="space-y-2">
+          <div className="lg:space-y-2 space-y-1">
             {content.features.map((feature, index) => (
               <div key={index} className="relative">
                 {/* Conditional Gradient Border - only show when expanded */}
@@ -99,8 +99,8 @@ const FeatureSlider = () => {
                     <span
                       className={`font-medium flex-grow transition-all duration-500 ease-out ${
                         expandedFeature === index
-                          ? "text-xl lg:text-5xl text-white transform scale-100"
-                          : "text-xl lg:text-4xl text-white/50 transform scale-100"
+                          ? "text-3xl lg:text-5xl text-white transform scale-100"
+                          : "text-3xl lg:text-4xl text-white/50 hover:text-white transform scale-100"
                       }`}
                     >
                       {feature.name}
