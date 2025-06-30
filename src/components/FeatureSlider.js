@@ -3,38 +3,38 @@ import React, { useState } from "react";
 const FeatureSlider = () => {
   const [expandedFeature, setExpandedFeature] = useState(0);
 
-  const content = {
-    features: [
-      {
-        name: "Centralized Product Information",
-        description:
-          "Skip complex PIM integrations and endless spreadsheets. We manage your product data for you, keeping everything current and synchronized so your ads just work.",
-      },
-      {
-        name: "SmartSubstitution™",
-        description:
-          "Automatically replace out-of-stock products with similar alternatives to maintain campaign performance.",
-      },
-      {
-        name: "Unified Data & Insights",
-        description:
-          "Consolidate all your product information from multiple sources into a single, reliable database.",
-      },
-      {
-        name: "Unmatched Scale",
-        description:
-          "Effortlessly manage and scale your product data across multiple channels without the usual headaches.",
-      },
-    ],
-  };
+  const features = [
+    {
+      name: "Centralized Product Information",
+      description:
+        "Skip complex PIM integrations and endless spreadsheets. We manage your product data for you, keeping everything current and synchronized so your ads just work.",
+    },
+    {
+      name: "SmartSubstitution™",
+      description:
+        "Automatically replace out-of-stock products with similar alternatives to maintain campaign performance.",
+    },
+    {
+      name: "Unified Data & Insights",
+      description:
+        "Consolidate all your product information from multiple sources into a single, reliable database.",
+    },
+    {
+      name: "Unmatched Scale",
+      description:
+        "Effortlessly manage and scale your product data across multiple channels without the usual headaches.",
+    },
+  ];
 
   const toggleFeature = (index) => {
     setExpandedFeature(expandedFeature === index ? null : index);
   };
 
+  const isExpanded = (index) => expandedFeature === index;
+
   return (
     <>
-      {/* Font import */}
+      {/* Google Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"
@@ -46,104 +46,127 @@ const FeatureSlider = () => {
         rel="stylesheet"
       />
 
-      <div
-        className="relative w-full overflow-hidden pt-24 pb-0 px-8"
-        style={{ fontFamily: "Poppins, sans-serif" }}
-      >
+      <div className="relative w-full overflow-hidden pt-24 pb-0 px-8 font-['Poppins',sans-serif]">
+        {/* Background */}
+        <div className="absolute inset-0 bg-[#1C2358]" />
+
         {/* Content Container */}
-        <h1 className="relative text-3xl lg:text-7xl text-center text-white z-20 lg:mb-16 mb-8">
-          Our Data Engine Powers{" "}
-        </h1>
-        <div className="relative mx-auto max-w-3xl z-10 h-full flex flex-col justify-center items-center ">
-          {/* Feature List - Accordion Style */}
-          <div className="lg:space-y-2 space-y-1">
-            {content.features.map((feature, index) => (
-              <div key={index} className="relative">
-                {/* Conditional Gradient Border - only show when expanded */}
-                {expandedFeature === index && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-orange-400 rounded-2xl p-[4px] transition-all duration-500 ease-out">
-                    <div className="w-full h-full bg-[#1C2358] rounded-xl"></div>
-                  </div>
-                )}
+        <div className="relative z-10">
+          {/* Header */}
+          <h1 className="text-3xl lg:text-6xl text-center text-white mb-8 lg:mb-16">
+            Our Data Engine Powers
+          </h1>
 
-                {/* Accordion Content */}
-                <div
-                  className={`relative rounded-xl overflow-hidden transition-all duration-500 ease-out ${
-                    expandedFeature === index
-                      ? "bg-transparent px-16 py-12"
-                      : ""
-                  }`}
-                >
-                  <button
-                    onClick={() => toggleFeature(index)}
-                    className={`w-full flex items-center text-white/80 transition-all duration-500 ease-out text-left ${
-                      expandedFeature === index ? "px-0 pt-0" : "p-4"
-                    }`}
-                  >
-                    {/* SVG Icon - only show when NOT expanded */}
-                    <div
-                      className={`mr-3 flex-shrink-0 transition-all duration-500 ease-out ${
-                        expandedFeature === index
-                          ? "w-0 opacity-0 scale-0"
-                          : "w-6 opacity-100 scale-100"
-                      }`}
-                    >
-                      <img
-                        src="new/new-ellipse.svg"
-                        alt="Bullet"
-                        className="w-8 h-8 transition-all duration-500 ease-out"
-                      />
-                    </div>
+          {/* Features Container */}
+          <div className="mx-auto max-w-3xl">
+            {/* Feature List */}
+            <div className="space-y-1 lg:space-y-2">
+              {features.map((feature, index) => (
+                <FeatureAccordion
+                  key={index}
+                  feature={feature}
+                  index={index}
+                  isExpanded={isExpanded(index)}
+                  onToggle={() => toggleFeature(index)}
+                />
+              ))}
+            </div>
 
-                    {/* Title - bigger when expanded */}
-                    <span
-                      className={`font-medium flex-grow transition-all duration-500 ease-out ${
-                        expandedFeature === index
-                          ? "text-3xl lg:text-5xl text-white transform scale-100"
-                          : "text-3xl lg:text-4xl text-white/50 hover:text-white transform scale-100"
-                      }`}
-                    >
-                      {feature.name}
-                    </span>
-                  </button>
-
-                  {/* Expandable Content */}
-                  <div
-                    className={`overflow-hidden transition-all duration-500 ease-out ${
-                      expandedFeature === index
-                        ? "max-h-48 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div
-                      className={`transition-all duration-500 ease-out ${
-                        expandedFeature === index
-                          ? "px-2 pt-4 pb-2"
-                          : "px-0 pb-0"
-                      }`}
-                    >
-                      <p className="text-white/100 text-lg leading-relaxed transition-all duration-500 ease-out">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {/* Bottom Image */}
+            <img
+              src="/new/smart-39277.png"
+              alt="Smart 2025"
+              className="mt-24 w-full max-w-xl mx-auto rounded-lg shadow-lg"
+            />
           </div>
-          <img
-            src="/new/smart-39277.png"
-            alt="Smart 2025"
-            className="mt-24 w-full max-w-xl rounded-lg shadow-lg"
-          />
-        </div>
-
-        {/* Main Container Border - keeping this */}
-        <div className="absolute inset-0 opacity-100">
-          <div className="w-full h-full bg-[#1C2358]"></div>
         </div>
       </div>
     </>
+  );
+};
+
+// Separate component for better organization
+const FeatureAccordion = ({ feature, index, isExpanded, onToggle }) => {
+  return (
+    <div className="relative">
+      {/* Gradient Border - only visible when expanded */}
+      {isExpanded && (
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4363F9] to-[#F26B21] rounded-2xl p-[4px] transition-all duration-500 ease-out">
+          <div className="w-full h-full bg-[#1C2358] rounded-xl" />
+        </div>
+      )}
+
+      {/* Accordion Content */}
+      <div
+        className={`
+          relative rounded-xl overflow-hidden transition-all duration-500 ease-out
+          ${isExpanded ? "bg-transparent px-16 py-12" : ""}
+        `}
+      >
+        {/* Accordion Button */}
+        <button
+          onClick={onToggle}
+          className={`
+            w-full flex items-center text-white/80 transition-all duration-500 ease-out text-left
+            ${isExpanded ? "px-0 pt-0" : "p-4"}
+          `}
+        >
+          {/* Icon - only visible when collapsed */}
+          <AccordionIcon isExpanded={isExpanded} />
+
+          {/* Title */}
+          <span
+            className={`
+              font-medium flex-grow transition-all duration-500 ease-out
+              ${
+                isExpanded
+                  ? "text-3xl lg:text-5xl text-white"
+                  : "text-3xl lg:text-4xl text-white/50 hover:text-white"
+              }
+            `}
+          >
+            {feature.name}
+          </span>
+        </button>
+
+        {/* Expandable Content */}
+        <div
+          className={`
+            overflow-hidden transition-all duration-500 ease-out
+            ${isExpanded ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}
+          `}
+        >
+          <div
+            className={`
+              transition-all duration-500 ease-out
+              ${isExpanded ? "px-2 pt-4 pb-2" : "px-0 pb-0"}
+            `}
+          >
+            <p className="text-white text-lg leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Separate component for the icon
+const AccordionIcon = ({ isExpanded }) => {
+  return (
+    <div
+      className={`
+        mr-3 flex-shrink-0 transition-all duration-500 ease-out
+        ${isExpanded ? "w-0 opacity-0 scale-0" : "w-6 opacity-100 scale-100"}
+      `}
+    >
+      <img
+        src="new/new-ellipse.svg"
+        alt="Bullet"
+        className="w-8 h-8 transition-all duration-500 ease-out"
+      />
+    </div>
   );
 };
 
