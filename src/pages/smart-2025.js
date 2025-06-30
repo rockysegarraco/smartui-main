@@ -1,8 +1,25 @@
 import React from "react";
 import Head from "next/head";
 import FeatureSlider from "@/components/FeatureSlider";
+import LogoWheel from "@/components/LogoWheel";
 
 export default function Smart2025Page() {
+  // Define your logos array
+  const logos = [
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+    { src: "/new/wheel/spindrift.svg", alt: "Spindrift" },
+    { src: "/new/wheel/cottonelle.svg", alt: "Cottonelle" },
+  ];
+
   return (
     <>
       <Head>
@@ -24,18 +41,24 @@ export default function Smart2025Page() {
         />
         <style>{`
           body { 
-            background-color: #f5f5f7; 
+            background-color: #1C2358; 
             font-family: 'Poppins', sans-serif;
           }
         `}</style>
       </Head>
 
       <div
-        className="min-h-screen bg-gray-50"
+        className="min-h-screen bg-[#1C2358]"
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <div className="mx-auto">
           <div>
+            {/* First Logo Wheel - scrolls left */}
+            <LogoWheel logos={logos} speed="40s" direction="left" />
+
+            {/* Second Logo Wheel - scrolls right (opposite direction) */}
+            <LogoWheel logos={logos} speed="40s" direction="right" />
+
             {/* Feature Slider Component */}
             <FeatureSlider />
           </div>
