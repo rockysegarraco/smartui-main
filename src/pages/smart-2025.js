@@ -3,6 +3,7 @@ import Head from "next/head";
 import FeatureSlider from "@/components/FeatureSlider";
 import LogoWheel from "@/components/LogoWheel";
 import BuiltBusiness from "@/components/BuiltBusiness";
+import InteractiveFeatures from "@/components/InteractiveFeatures";
 
 export default function Smart2025Page() {
   // Define your logos array
@@ -60,6 +61,9 @@ export default function Smart2025Page() {
             {/* Second Logo Wheel - scrolls right (opposite direction) */}
             <LogoWheel logos={logos} speed="40s" direction="right" />
             <BuiltBusiness />
+
+            {/* New Interactive Features Component */}
+            <InteractiveFeatures />
 
             {/* Feature Slider Component */}
             <FeatureSlider />
