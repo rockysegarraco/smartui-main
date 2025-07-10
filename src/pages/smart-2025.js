@@ -57,9 +57,10 @@ export default function Smart2025Page() {
       >
         <div className="mx-auto">
           <div>
-            {/* Rotating Text Slider */}
-            <RotatingPill />
-            {/* Rotating Text Slider <NewRotatingTextSlider /> */}
+            {/* Rotating Text Slider <RotatingPill /> */}
+
+            {/* Rotating Text Slider  */}
+            <NewRotatingTextSlider />
 
             {/* First Logo Wheel - scrolls left */}
             <LogoWheel logos={logos} speed="40s" direction="left" />
