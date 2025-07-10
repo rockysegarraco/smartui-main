@@ -53,7 +53,7 @@ const NewRotatingTextSlider = () => {
         <div className="flex flex-col md:flex-row items-center w-full">
           {/* "More" text */}
           <div className="md:mr-6 mb-10 md:mb-0">
-            <h2 className="text-7xl md:text-8xl font-black text-transparent bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text leading-none">
+            <h2 className="text-7xl text-white md:text-7xl text-transparent bg-clip-text leading-none">
               More
             </h2>
           </div>
@@ -75,10 +75,24 @@ const NewRotatingTextSlider = () => {
               </div>
               {/* Main pill */}
               <div
-                className="inline-flex items-center h-[100px] px-10 text-7xl border-4 border-gradient-to-r from-indigo-600 via-purple-600 via-yellow-400 via-red-400 to-orange-500 rounded-[500px] bg-[#1C2358] text-white transition-opacity duration-700 ease-out"
+                className={`p-[3px] rounded-[500px] bg-gradient-to-r from-orange-400 to-red-500 transition-opacity duration-700 ease-out`}
                 style={{ opacity: fade ? 1 : 0.2 }}
               >
-                {rotatingTexts[index]}
+                <div className="inline-flex items-center h-[94px] px-10 text-7xl rounded-[500px] bg-[#1C2358] w-full relative">
+                  {rotatingTexts[index] === "products in carts" ? (
+                    <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                      {rotatingTexts[index]}
+                    </span>
+                  ) : (
+                    <span className="text-white">{rotatingTexts[index]}</span>
+                  )}
+                  {/* Pointer animation */}
+                  {rotatingTexts[index] === "products in carts" && (
+                    <span className="absolute -bottom-[-72px] left-[525px] -translate-x-1/2 text-6xl animate-bounce pointer-events-none select-none">
+                      👇
+                    </span>
+                  )}
+                </div>
               </div>
               {/* Next pill */}
               <div className="inline-flex items-center h-[100px] px-10 text-7xl opacity-20 rounded-[500px] bg-[#1C2358] text-white border-4 border-transparent">
