@@ -48,7 +48,7 @@ const NewRotatingTextSlider = () => {
   const nextNextIdx = (index + 2) % rotatingTexts.length;
 
   return (
-    <div className="bg-[#1C2358] min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="bg-[#1C2358] py-24 flex items-center justify-center relative overflow-hidden">
       <div className="w-full max-w-6xl mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center w-full">
           {/* "More" text */}

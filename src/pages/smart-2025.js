@@ -5,6 +5,7 @@ import LogoWheel from "@/components/LogoWheel";
 import BuiltBusiness from "@/components/BuiltBusiness";
 import InteractiveFeatures from "@/components/InteractiveFeatures";
 import NewRotatingTextSlider from "@/components/NewRotatingTextSlider.js";
+import RotatingPill from "@/components/RotatingPill.js";
 
 export default function Smart2025Page() {
   // Define your logos array
@@ -57,7 +58,9 @@ export default function Smart2025Page() {
         <div className="mx-auto">
           <div>
             {/* Rotating Text Slider */}
-            <NewRotatingTextSlider />
+            <RotatingPill />
+            {/* Rotating Text Slider <NewRotatingTextSlider /> */}
+
             {/* First Logo Wheel - scrolls left */}
             <LogoWheel logos={logos} speed="40s" direction="left" />
 
